@@ -1,15 +1,9 @@
-import {IsString} from 'class-validator';
-
-class User {
-    @IsString()
-    public name: string | undefined;
-
-    @IsString()
-    public email: string | undefined;
-
-    @IsString()
-    public password: string | undefined;
-
+interface UserDTO {
+    username: string;
+    password: string;
+    email: string;
+    age?: string;
+    gender?: string;
 }
 
-export default User;
+export default UserDTO;

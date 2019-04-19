@@ -1,11 +1,9 @@
-import * as mongoose from 'mongoose';
-import User from './user.interface';
+interface UserModel {
+    username: string;
+    password: string;
+    email: string;
+    age?: string;
+    gender?: string;
+}
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    password: String,
-})
-
-const userModel = mongoose.model<User & mongoose.Document>('User', userSchema);
-export default userModel;
+export default UserModel;
