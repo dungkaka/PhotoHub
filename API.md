@@ -71,15 +71,15 @@
                     ```  
 
             + Bad request (Username is used already, ...): 
-            - Status Code: 400
-            - Payload:
-                ```
-                {
-                    "status": false,
-                    "code": int,
-                    "message": "string",
-                }
-                ```
+                - Status Code: 400
+                - Payload:
+                    ```
+                    {
+                        "status": false,
+                        "code": int,
+                        "message": "string",
+                    }
+                    ```
 
     + **Login**:
 

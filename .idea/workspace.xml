@@ -102,9 +102,7 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/API.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1326" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -689,9 +687,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/API.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1326" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
