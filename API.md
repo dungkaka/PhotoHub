@@ -38,7 +38,7 @@
 
 + Detail for endpoint:
 
-    **Signup**:
+    + **Signup**:
 
         - POST api/signup
         - Request Payload:
@@ -81,7 +81,7 @@
                 }
                 ```
 
-    **Login**:
+    + **Login**:
 
         - POST  api/login
         - Request payload:
@@ -109,7 +109,7 @@
                         }
                     }
                     ```
-                    
+
             + Bad request (Username/Password is wrong, ...):
                 - Status Code: 400
                 - Payload:
