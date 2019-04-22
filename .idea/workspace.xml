@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/config/keyJWT.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/exception/AuthenticationTokenMissingException.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/exception/WrongAuthenticationTokenException.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/middleware/AuthMiddleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/middleware/ValidateMiddleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/exception/httpException.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/exception/HttpException.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/exception/userWithUsernameAlreadyExistException.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/exception/UserWithUsernameAlreadyExistException.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,7 +36,7 @@
         <counts>
           <entry key="js" value="178" />
           <entry key="json" value="18" />
-          <entry key="md" value="330" />
+          <entry key="md" value="332" />
           <entry key="ts" value="13887" />
         </counts>
       </usages-collector>
@@ -58,7 +44,7 @@
         <counts>
           <entry key="JSON" value="18" />
           <entry key="JavaScript" value="178" />
-          <entry key="PLAIN_TEXT" value="330" />
+          <entry key="PLAIN_TEXT" value="332" />
           <entry key="TypeScript" value="13887" />
         </counts>
       </usages-collector>
@@ -110,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -302,12 +288,12 @@
       <workItem from="1555141317159" duration="37862000" />
       <workItem from="1555595598465" duration="18710000" />
       <workItem from="1555685739422" duration="25359000" />
-      <workItem from="1555944384867" duration="939000" />
+      <workItem from="1555944384867" duration="1016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105160000" />
+    <option name="totallyTimeSpent" value="105237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="155" y="2" width="1383" height="790" extended-state="0" />
@@ -691,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
