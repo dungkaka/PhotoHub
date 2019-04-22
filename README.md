@@ -1,6 +1,6 @@
 ### Local Install Enviroment
 
-- First, go to directory function. Notice that go to PhotoHub/function, then install node module:
+- First, go to directory "functions". Notice that go to PhotoHub/functions, then install node module:
 
 ```
     npm install
