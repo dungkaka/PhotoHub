@@ -39,6 +39,7 @@
 + Detail for endpoint:
 
     **Signup**:
+
         - POST api/signup
         - Request Payload:
             ```
@@ -50,6 +51,7 @@
                 "gender: "string,
             }
             ```
+
         - Responses:
             + OK:
                 - Status Code: 200
@@ -66,7 +68,8 @@
                             "password": empty
                         }
                     }
-                    ```    
+                    ```  
+
             + Bad request (Username is used already, ...): 
             - Status Code: 400
             - Payload:
@@ -79,6 +82,7 @@
                 ```
 
     **Login**:
+
         - POST  api/login
         - Request payload:
             ```
@@ -86,7 +90,8 @@
                 "username": "string", //required
                 "password": "string", //required
             }
-            ```       
+            ```      
+
         - Responses:
             + OK:
                 - Status Code: 200
@@ -104,6 +109,7 @@
                         }
                     }
                     ```
+                    
             + Bad request (Username/Password is wrong, ...):
                 - Status Code: 400
                 - Payload:

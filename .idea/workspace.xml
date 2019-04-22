@@ -102,7 +102,9 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/API.md">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1326" />
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -211,7 +213,7 @@
       <path value="$PROJECT_DIR$/functions/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="283" />
     <option name="y" value="30" />
     <option name="width" value="1729" />
@@ -295,7 +297,7 @@
     <option name="totallyTimeSpent" value="106440000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="227" y="24" width="1383" height="790" extended-state="0" />
+    <frame x="227" y="24" width="1383" height="790" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2778603" />
@@ -687,7 +689,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/API.md">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326" />
+      </provider>
     </entry>
   </component>
 </project>
