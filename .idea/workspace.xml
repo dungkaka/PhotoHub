@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/model/image/image.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/model/image/image.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/interfaces/dataStoredInToken.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/interfaces/dataStoredInToken.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/middleware/AuthMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/middleware/ValidateMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -428,12 +407,12 @@
       <workItem from="1555141317159" duration="37862000" />
       <workItem from="1555595598465" duration="18710000" />
       <workItem from="1555685739422" duration="25359000" />
-      <workItem from="1555944384867" duration="38401000" />
+      <workItem from="1555944384867" duration="38796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142622000" />
+    <option name="totallyTimeSpent" value="143017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="195" y="30" width="1285" height="783" extended-state="1" />

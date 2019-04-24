@@ -1,37 +1,37 @@
 ### Brief API doc
 
 + Endpoints:
-    + Pre-endpoint: <strong> api = "https://photohub-e7e04.firebaseapp.com/" </strong>
+    + Pre-endpoint: **api = "https://photohub-e7e04.firebaseapp.com/"**
 
     + Sign up:
-         POST  api/signup
+         *POST  api/signup*
 
     + Login:
-         POST  api/login
+         *POST  api/login*
 
     + Update profile:
-         PUT   api/users/<user_name>
+         *PUT   api/users/<user_name>*
     
     + Get all images:
-         GET   api/images
+         *GET   api/images*
     
     + Get images by tag:
-         POST   api/images
+         *POST   api/images*
 
     + Get collections (USER):
-         GET   api/collections
+         *GET   api/collections*
 
     + Get collection by id:
-         GET   api/collections/<collection_id>
+         *GET   api/collections/<collection_id>*
     
     + Create collection:
-         POST  api/collections/<collection_id>
+         *POST  api/collections/<collection_id>*
 
     + Update collection:
-         PUT   api/collections/<collection_id>
+         *PUT   api/collections/<collection_id>*
 
     + Like image:
-         PUT   api/images/<image_id>
+         *PUT   api/images/<image_id>*
 
 + Content-Type: application/json
 
@@ -155,7 +155,7 @@
                 }
             }
 
-            You can test 2 example above for same result
+            You can test 2 examples above for same result
 
             ```      
 
