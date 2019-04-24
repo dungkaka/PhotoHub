@@ -1,8 +1,8 @@
 import { Request } from 'express';
-import UserDTO from "../model/user/user.dto";
+import UserModel from "../model/user/user.model";
 
 interface RequestWithUser extends Request {
-    user: UserDTO;
+    user: UserModel;
 }
 
 export default RequestWithUser;

@@ -1,7 +1,9 @@
 
-import {firestoreRef} from "./../../config/firebase";
+import {firestoreRef} from "../../config/firebase";
 import UserDTO from "./user.dto";
 import UserModel from "./user.model";
+import SignUpDTO from "../../controller/authenication/signUp.dto";
+import HttpException from "../../exception/HttpException";
 
 class UserDAO {
 
@@ -11,14 +13,16 @@ class UserDAO {
     /*
     Convert from UserDTO to UserModel to communicate with Database
      */
-    public static convertToUserModel = (user: UserDTO): UserModel => {
+    public static convertToUserModel = (user: SignUpDTO): UserModel => {
         return {
             username: user.username,
             password: user.password,
             email: user.email,
-            age: user.age,
-            gender: user.gender,
+            age: user.age?user.age:"",
+            gender: user.gender?user.gender:"",
+            role: user.role?user.role:"user",
         }
+
     }
 
     /*
@@ -31,6 +35,7 @@ class UserDAO {
             email: user.email,
             age: user.age,
             gender: user.gender,
+            role: user.role,
         }
     }
 
@@ -58,15 +63,22 @@ class UserDAO {
     Then userDTO object will converted to UserModel object to communicate with database(create user to database)
     Return value is json of data user get from database.
      */
-    public static createUserToDatabase = async (user: UserDTO, hashedPassword: string) => {
-        const userModel = await UserDAO.userRef.add({
-            ...UserDAO.convertToUserModel(user),
-            password: hashedPassword
-        });
+    public static createUserToDatabase = async (user: SignUpDTO, hashedPassword: string) => {
 
-        const userData = await userModel.get();
+        try {
+            const userModel = await UserDAO.userRef.add({
+                ...UserDAO.convertToUserModel(user),
+                password: hashedPassword
+            });
 
-        return userData.data();
+            const userData = await userModel.get();
+
+            return userData.data();
+        } catch {
+            throw new HttpException(400, "Can not register for user with valid information !");
+        }
+
+
     }
 
 }

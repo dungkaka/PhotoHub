@@ -20,7 +20,7 @@ const authMiddleware = async (request: RequestWithUser, response: Response, next
         const username = verificationResponse.username;
         const user = await UserDAO.findUserByUsername(username);
         if (user.length) {
-            request.user = UserDAO.convertToUserDTO(user[0]);
+            request.user = user[0];
             next();
         } else {
             next(new WrongAuthenticationTokenException());

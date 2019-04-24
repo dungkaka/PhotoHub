@@ -1,11 +1,10 @@
-interface UserModel {
-
+interface SignUpDTO {
     username: string;
     password: string;
     email: string;
-    age?: string;
     gender?: string;
-    role: string;
+    age?: string;
+    role?: string;
 }
 
-export default UserModel;
+export default SignUpDTO;

@@ -1,59 +1,45 @@
 import * as bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
-import TokenData from "../../interfaces/tokenData.interface";
-import DataStoredInToken from "../../interfaces/dataStoredInToken.interface";
-import UserWithUsernameAlreadyExistException from "../../exception/UserWithUsernameAlreadyExistException";
 import UserDTO from "../../model/user/user.dto";
 import UserDAO from "../../model/user/user.dao";
 import HttpException from "../../exception/HttpException";
+import SignUpDTO from "../../controller/authenication/signUp.dto";
 
 
 class AuthenicationService {
 
-    public async register(userDTO: UserDTO) {
-
-        const listUser = await UserDAO.findUserByUsername(userDTO.username);
-        if (listUser.length) {
-            throw new UserWithUsernameAlreadyExistException(userDTO.username);
-        }
-
-        const hashedPassword = await bcrypt.hash(userDTO.password, 10);
-        const userModel = await UserDAO.createUserToDatabase(userDTO, hashedPassword);
-
-        if(userModel) {
-            userModel.password = undefined;
-            // @ts-ignore
-            const user: UserDTO = UserDAO.convertToUserDTO(userModel);
-
-            const tokenData = this.createToken(user);
-            const cookie = this.createCookie(tokenData);
-
-            return {
-                cookie,
-                user,
-            };
-
+    public async register(userSignUp: SignUpDTO) {
+        if(userSignUp.username) {
+            const listUser = await UserDAO.findUserByUsername(userSignUp.username);
+            if (listUser.length) {
+                throw new HttpException(400, `User with username ${userSignUp.username} already exist`);
+            }
         } else {
-            throw new HttpException(400, "Something wrong")
-        }
-    }
-
-    public createCookie(tokenData: TokenData) {
-        return `token=${tokenData.token}; HttpOnly=false; Max-Age=${tokenData.expiresIn}`;
-    }
-
-    public createToken(user: UserDTO): TokenData {
-        const expiresIn = 60*60;
-        const secret = "My secret key";
-        const dataStoreInToken: DataStoredInToken = {
-            username: user.username,
+            throw new HttpException(400, "Invalid Username");
         }
 
-        return {
-            expiresIn,
-            token: jwt.sign(dataStoreInToken, secret, {expiresIn}),
+
+        if (userSignUp.password) {
+            const hashedPassword = await bcrypt.hash(userSignUp.password, 10);
+            const userModel = await UserDAO.createUserToDatabase(userSignUp, hashedPassword);
+            if (userModel) {
+                // @ts-ignore
+                const user: UserDTO = UserDAO.convertToUserDTO(userModel);
+                user.password = undefined;
+
+                return {
+                    user,
+                };
+
+            } else {
+                throw new HttpException(400, `Register fail ! Please try it again`);
+            }
+        } else {
+            throw new HttpException(400, "Invalid password !");
         }
+
+
     }
+
 
 }
 

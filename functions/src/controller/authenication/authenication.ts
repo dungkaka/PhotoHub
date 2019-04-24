@@ -8,14 +8,14 @@ import * as bcrypt from 'bcrypt';
 import TokenData from "../../interfaces/tokenData.interface";
 import DataStoredInToken from "../../interfaces/dataStoredInToken.interface";
 import * as jwt from "jsonwebtoken";
-import authMiddleware from "../../middleware/AuthMiddleware";
-import RequestWithUser from "../../interfaces/requestUser.interface";
-import validationMiddleware from "../../middleware/ValidateMiddleware";
 import keyJWT from "../../config/keyJWT";
+import HttpException from "../../exception/HttpException";
+import SignUpDTO from "./signUp.dto";
+import UserModel from "../../model/user/user.model";
 
 
 class AuthenticationController implements Controller {
-    public path = '/auth';
+    public path = '';
     public router = express.Router();
     public authenicationService = new AuthenicationService();
 
@@ -24,72 +24,84 @@ class AuthenticationController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.post(`${this.path}/register`, this.registration);
-        this.router.post(`${this.path}/login`, authMiddleware, this.loggingIn);
+        this.router.use(function(req, res, next) {
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+            res.header("Access-Control-Allow-Headers","*");
+            res.header('Access-Control-Allow-Credentials', "true");
+            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+            next();
+        });
+        this.router.post(`${this.path}/signup`, this.registration);
+        this.router.post(`${this.path}/login`, this.loggingIn);
     }
 
     private registration = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-        const userDTO: UserDTO = request.body;
-        console.log(request.headers);
+        const userSignUp: SignUpDTO = request.body;
         try {
-            const { user } = await this.authenicationService.register(userDTO);
-            const tokenData = this.createToken(user);
+            const { user } = await this.authenicationService.register(userSignUp);
 
             // response.setHeader('Set-Cookie', cookie);
-            // response.cookie('token', "1234567859", {expires: new Date(Date.now() + 99999999)});
-
-            response.send(JSON.stringify({
+            response.cookie('token', "1234567859", {expires: new Date(Date.now() + 99999999)});
+            response.status(200).send(JSON.stringify({
+                status: true,
                 user: user,
-                token: tokenData
 
             }, null, '\t'));
 
         } catch (error) {
-            response.send({
-                status: error.status,
+            response.status(400).send({
+                status: false,
+                code: error.status,
                 message: error.message,
             });
         }
     }
 
-    private loggingIn = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+    private loggingIn = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
         const logInDTO: LogInDTO = request.body;
         const userList = await UserDAO.findUserByUsername(logInDTO.username);
-        const user = userList[0];
-        if(user) {
-            const isPasswordMatching = await bcrypt.compare(logInDTO.password, user.password);
-            if(isPasswordMatching) {
+        const userModel: UserModel = userList[0];
+        try {
+            if(userModel) {
+                const isPasswordMatching = await bcrypt.compare(logInDTO.password, userModel.password);
+                if(isPasswordMatching) {
+                    const userDTO: UserDTO = UserDAO.convertToUserDTO(userModel);
+                    userDTO.password = undefined;
+                    const tokenData = this.createToken(userModel);
+                    // response.setHeader('Set-Cookie', [this.createCookie(tokenData)]);
 
-                user.password = undefined;
-                const tokenData = this.createToken(user);
-                // response.setHeader('Set-Cookie', [this.createCookie(tokenData)]);
-                response.send(JSON.stringify({
-                    user: UserDAO.convertToUserDTO(user),
-                    token: tokenData.token,
-                    claim: request.user.username,
-                }, null, '\t'));
+                    response.status(200).send(JSON.stringify({
+                        status: true,
+                        access_token: tokenData.token,
+                        user: userDTO,
+                    }, null, '\t'));
 
+                } else {
+                    throw new HttpException(400, "Check Username or Password");
+                }
             } else {
-                response.status(400).send({
-                    message: "Check user and password !"
-                })
+                throw new HttpException(400, "Check Username or Password");
             }
-        } else {
-            response.status(400).send({
-                message: "Check user and password !"
-            })
+        } catch (error) {
+            response.status(400).send(JSON.stringify({
+                status: false,
+                code: error.status,
+                message: error.message,
+            }, null, '\t'))
         }
+
     }
 
     public createCookie(tokenData: TokenData) {
         return `Authorization=${tokenData.token}; HttpOnly=false; Max-Age=${tokenData.expiresIn}`;
     }
 
-    public createToken(user: UserDTO): TokenData {
+    public createToken(user: UserModel): TokenData {
         const expiresIn = 60*60;
         const secret = keyJWT;
         const dataStoreInToken: DataStoredInToken = {
             username: user.username,
+            role: user.role,
         }
 
         return {

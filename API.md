@@ -1,36 +1,37 @@
 ### Brief API doc
 
 + Endpoints:
+    + Pre-endpoint: <strong> api = "https://photohub-e7e04.firebaseapp.com/" </strong>
 
     + Sign up:
-        + POST  api/signup
+         POST  api/signup
 
     + Login:
-        + POST  api/login
+         POST  api/login
 
     + Update profile:
-        + PUT   api/users/<user_name>
+         PUT   api/users/<user_name>
     
     + Get all images:
-        + GET   api/images
+         GET   api/images
     
     + Get images by tag:
-        + POST   api/images
+         POST   api/images
 
     + Get collections (USER):
-        + GET   api/collections
+         GET   api/collections
 
     + Get collection by id:
-        + GET   api/collections/<collection_id>
+         GET   api/collections/<collection_id>
     
     + Create collection:
-        + POST  api/collections/<collection_id>
+         POST  api/collections/<collection_id>
 
     + Update collection:
-        + PUT   api/collections/<collection_id>
+         PUT   api/collections/<collection_id>
 
     + Like image:
-        + PUT   api/images/<image_id>
+         PUT   api/images/<image_id>
 
 + Content-Type: application/json
 
@@ -121,4 +122,61 @@
                     }
                     ```
 
+    + **Get Image By Tag**
+
+        - POST  api/images
+        - Header: Authorization: Bearer TOKEN
+        - Request payload:
+            ```
+            {
+                tags: {
+                    "field_1": string,
+                    "field_2": string,
+                    ...
+                }
+            }
+
+            Notice that every field that value equal "", null will be ignore for search.
+            For example:
+            {
+                tags: {
+                    "accessories": "ring",
+                    "number: 2,
+                    "age": "",
+                    "gender": null
+
+                }
+            }
+            equals to
+            {
+                tags: {
+                    "accessories": "ring",
+                    "number: 2
+                }
+            }
+
+            You can test 2 example above for same result
+
+            ```      
+
+        - Responses:
+            + OK:
+                - Status Code: 200
+                - Payload:
+                    ```
+                    {
+                        images_detail
+                    }
+                    ```
+
+            + Bad request (Invalid Message, ...):
+                - Status Code: 400
+                - Payload:
+                    ```
+                    {
+                        "status": false,
+                        "code": int,
+                        "message": "string"
+                    }
+                    ```
             
