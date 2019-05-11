@@ -1,0 +1,4 @@
+interface CollectionCreateDTO {
+    name: string,
+}
+

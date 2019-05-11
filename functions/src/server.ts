@@ -1,8 +1,8 @@
 import App from './app';
 import AuthenticationController from "./controller/authenication/authenication";
-import * as functions from 'firebase-functions';
 import "reflect-metadata";
 import ImageQuery from "./controller/image_query/image_search";
+import * as functions from "firebase-functions";
 
 const app = new App(
     [
@@ -11,4 +11,6 @@ const app = new App(
     ],
 );
 
-export const webApi = functions.https.onRequest(app.app);
+
+exports.webApi = functions.https.onRequest(app.app);
+export * from './storage-trigger/storage';

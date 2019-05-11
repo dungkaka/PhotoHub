@@ -130,28 +130,31 @@
             ```
             {
                 tags: {
-                    "field_1": string,
-                    "field_2": string,
+                    "field_1": true,
+                    "field_2": true,
                     ...
                 }
             }
+            
+            where tags is list of tags that user choose for searching images.
+            "fiel_1", "field_2" is the name of tags that user choose, and value is true.
 
-            Notice that every field that value equal "", null will be ignore for search.
+            Notice that every field that value equal {"", null, false} will be ignore for search.
             For example:
             {
                 tags: {
-                    "accessories": "ring",
-                    "number: 2,
-                    "age": "",
-                    "gender": null
+                    "number_2": true,
+                    "ao dai": true,
+                    "cay coi": "",
+                    "xe dap": null
 
                 }
             }
             equals to
             {
                 tags: {
-                    "accessories": "ring",
-                    "number: 2
+                    "number_2": true,
+                    "ao dai": true
                 }
             }
 

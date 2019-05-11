@@ -31,7 +31,13 @@ class App {
         controllers.forEach((controller) => {
             this.app.use('/api/v1', controller.router);
         });
+
     }
+
+
+    // private initializeTriggerStorage() {
+    //
+    // }
 
 }
 

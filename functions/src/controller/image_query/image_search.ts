@@ -3,6 +3,7 @@ import * as express from 'express';
 import ImageDAO from "../../model/image/image.dao";
 import HttpException from "../../exception/HttpException";
 import authMiddleware from "../../middleware/auth.middleware";
+import RequestWithUser from "../../interfaces/requestUser.interface";
 
 class ImageQuery implements Controller {
     public path = "";
@@ -14,15 +15,34 @@ class ImageQuery implements Controller {
 
     private initializeRoutes() {
         // @ts-ignore
-        this.router.post(`${this.path}/images`, authMiddleware, this.imageQuery);
+        this.router.post(`${this.path}/images`, authMiddleware, this.imageQueryByTag);
+        // @ts-ignore
+        this.router.get(`${this.path}/images`, authMiddleware, this.imageQuery);
     }
 
-    private imageQuery = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-        const imageDTO: ImageSearchDTO = request.body;
+    private imageQuery = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+        const user = request.user;
+        try {
+            const imageList = await ImageDAO.getAllImage();
+            response.send(JSON.stringify({
+                user,
+                imageList,
+            }, null, "\t"))
+        } catch (error) {
+            response.send({
+                status: false,
+                code: error.status,
+                message: error.message,
+            })
+        }
+    }
+
+    private imageQueryByTag = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+        const imageSearchDTO: ImageSearchDTO = request.body;
 
         try {
-            if(imageDTO.tags) {
-                const imageList = await ImageDAO.findImageByTag(imageDTO.tags);
+            if (imageSearchDTO.tags) {
+                const imageList = await ImageDAO.findImageByTag(imageSearchDTO.tags);
                 response.send(JSON.stringify(imageList, null, "\t"));
             } else {
                 throw new HttpException(400, "Invalid message");

@@ -6,9 +6,7 @@ import SignUpDTO from "../../controller/authenication/signUp.dto";
 import HttpException from "../../exception/HttpException";
 
 class UserDAO {
-
     private static userRef = firestoreRef.collection("users");
-
 
     /*
     Convert from UserDTO to UserModel to communicate with Database
@@ -51,7 +49,7 @@ class UserDAO {
 
         const listUser: any[] = [];
         userDataQuerySnapshot.forEach((doc) => {
-            listUser.push(doc.data());
+            listUser.push({...doc.data(), user_id: doc.id});
         });
 
         return listUser;
