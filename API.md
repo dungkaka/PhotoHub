@@ -12,6 +12,12 @@
     + Update profile:
          *PUT   api/users/<user_name>*
     
+    + Get all tags:
+         *GET   api/tags*
+         
+    + Create tags:
+         *POST api/tags*
+    
     + Get all images:
          *GET   api/images*
     
@@ -122,6 +128,58 @@
                     }
                     ```
 
+    + **Get Tags**
+    
+            - GET  api/tags
+            - Header: Authorization: Bearer TOKEN
+            - Request payload: None
+                - Response:
+                + OK:
+                    - Status Code: 200
+                    - Payload:
+                        ```
+                        {
+                            "status": true,
+                            "tags": [list of tag] 
+                        }
+                        ```
+    
+                + Bad request (Invalid Message, ...):
+                    - Status Code: 400
+                    - Payload:
+                        ```
+                        {
+                            "status": false,
+                            "code": int,
+                            "message": "string"
+                        }
+                        ```
+        + **Get All Image**
+        
+                - GET  api/images
+                - Header: Authorization: Bearer TOKEN
+                - Request payload: None
+                    - Response:
+                    + OK:
+                        - Status Code: 200
+                        - Payload:
+                            ```
+                            {
+                                list of image
+                            }
+                            ```
+        
+                    + Bad request (Invalid Message, ...):
+                        - Status Code: 400
+                        - Payload:
+                            ```
+                            {
+                                "status": false,
+                                "code": int,
+                                "message": "string"
+                            }
+                            ```
+                       
     + **Get Image By Tag**
 
         - POST  api/images
@@ -182,4 +240,4 @@
                         "message": "string"
                     }
                     ```
-            
+        

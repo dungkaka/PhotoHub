@@ -1,14 +1,14 @@
 import {firestoreRef} from "../../config/firebase";
 
 class CollectionDAO {
-    private static collectionsRef: any;
+    private collectionsRef: any;
 
     constructor(user_id: string) {
-        CollectionDAO.collectionsRef = firestoreRef.collection("user").doc(user_id).collection("collections");
+        this.collectionsRef = firestoreRef.collection("users").doc(user_id).collection("collections");
     }
 
-    static getAllCollection = async () => {
-        const collectionsQuerySnapshot = await CollectionDAO.collectionsRef.get();
+    getAllCollection = async () => {
+        const collectionsQuerySnapshot = await this.collectionsRef.get();
 
         const listCollection: any[] = [];
         // @ts-ignore
@@ -16,11 +16,13 @@ class CollectionDAO {
             listCollection.push({...doc.data(), collection_id: doc.id});
         });
 
+        console.log(listCollection);
+
         return listCollection;
     }
 
-    static createNewCollection = async (collection: CollectionCreateDTO) => {
-        const collectionModel = await CollectionDAO.collectionsRef.add(collection);
+    createNewCollection = async (collection: CollectionCreateDTO) => {
+        const collectionModel = await this.collectionsRef.add(collection);
         const collectionData = await collectionModel.get();
         return { ...collectionData.data(), collection_id: collectionData.id };
     }

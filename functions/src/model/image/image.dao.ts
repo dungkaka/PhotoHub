@@ -10,7 +10,7 @@ class ImageDAO {
 
         const listImage: any[] = [];
         userDataQuerySnapshot.forEach((doc) => {
-            listImage.push(doc.data());
+            listImage.push({...doc.data(), image_id: doc.id});
         });
 
         return listImage;

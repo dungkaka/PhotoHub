@@ -3,6 +3,8 @@ import * as bodyParser from 'body-parser';
 import Controller from "./interfaces/controller.interface";
 import cookieParser = require("cookie-parser");
 import * as cors from 'cors';
+import * as expressValidator from 'express-validator';
+import errorMiddleware from "./middleware/error.middleware";
 
 class App {
     public app: express.Application;
@@ -12,6 +14,7 @@ class App {
 
         this.initializeMiddlewares();
         this.initializeControllers(controllers);
+        this.initializeErrorHandling();
     }
 
     private initializeMiddlewares() {
@@ -19,12 +22,15 @@ class App {
         this.app.use(cookieParser());
         this.app.use(cors());
         this.app.use(function(req, res, next) {
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.header("Access-Control-Allow-Headers","*");
             res.header('Access-Control-Allow-Credentials', "true");
-            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
             next();
         });
+        this.app.use(expressValidator());
+    }
+
+    private initializeErrorHandling() {
+        this.app.use(errorMiddleware);
     }
 
     private initializeControllers(controllers: Controller[]) {

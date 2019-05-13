@@ -14,26 +14,22 @@ class ImageQuery implements Controller {
     }
 
     private initializeRoutes() {
+
         // @ts-ignore
         this.router.post(`${this.path}/images`, authMiddleware, this.imageQueryByTag);
         // @ts-ignore
         this.router.get(`${this.path}/images`, authMiddleware, this.imageQuery);
+
     }
 
     private imageQuery = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
-        const user = request.user;
         try {
             const imageList = await ImageDAO.getAllImage();
             response.send(JSON.stringify({
-                user,
                 imageList,
             }, null, "\t"))
         } catch (error) {
-            response.send({
-                status: false,
-                code: error.status,
-                message: error.message,
-            })
+            next(error)
         }
     }
 
@@ -49,11 +45,7 @@ class ImageQuery implements Controller {
             }
 
         } catch (error) {
-            response.send({
-                status: false,
-                code: error.status,
-                message: error.message,
-            })
+            next(error)
         }
     }
 

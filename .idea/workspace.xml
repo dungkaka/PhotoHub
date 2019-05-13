@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/collection/collectionCreate.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/src/middleware/error.middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/src/middleware/validation-handler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/config/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/config/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.model.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/server.ts" afterDir="false" />
     </list>
@@ -53,37 +57,39 @@
         <counts>
           <entry key="js" value="204" />
           <entry key="json" value="18" />
-          <entry key="md" value="776" />
-          <entry key="ts" value="22742" />
+          <entry key="md" value="1044" />
+          <entry key="ts" value="27971" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="18" />
           <entry key="JavaScript" value="204" />
-          <entry key="Markdown" value="297" />
+          <entry key="Markdown" value="565" />
           <entry key="PLAIN_TEXT" value="479" />
-          <entry key="TypeScript" value="22742" />
+          <entry key="TypeScript" value="27971" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="JavaScript-modules-diagram/D:/Code_Project/00_DoAn/PhotoHub/functions/src" value="1" />
           <entry key="UserWithUsernameAlreadyExistException" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="51" />
+          <entry key="js" value="56" />
           <entry key="json" value="23" />
           <entry key="log" value="1" />
-          <entry key="md" value="5" />
-          <entry key="ts" value="257" />
+          <entry key="md" value="6" />
+          <entry key="ts" value="322" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="22" />
-          <entry key="JavaScript" value="51" />
-          <entry key="Markdown" value="1" />
+          <entry key="JavaScript" value="56" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="TypeScript" value="258" />
+          <entry key="TypeScript" value="323" />
+          <entry key="UML" value="1" />
           <entry key="tsconfig" value="1" />
         </counts>
       </usages-collector>
@@ -92,31 +98,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dao.ts">
+        <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="66" column="53" lean-forward="true" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
-              <folding>
-                <element signature="e#1#52#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-187">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="22" column="54" lean-forward="true" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="17">
+              <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -124,12 +118,48 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/controller/tag/tag.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/app.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/server.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-360">
-                <caret line="139" column="51" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
+              <first_editor relative-caret-position="148">
+                <caret line="167" column="45" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
               </first_editor>
               <second_editor />
             </state>
@@ -137,40 +167,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dto.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collectionCreate.dto.ts">
+        <entry file="file://$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -178,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="119">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="35" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -188,13 +188,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts">
+        <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.model.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -215,11 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/functions/src/controller/Login/login.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/index.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/Authenication/authenication.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/interfaces/controller.interface.ts" />
-        <option value="$PROJECT_DIR$/functions/package.json" />
         <option value="$PROJECT_DIR$/functions/src/constant/firebase.ts" />
         <option value="$PROJECT_DIR$/functions/src/exception/UserWithUsernameAlreadyExistException.ts" />
         <option value="$PROJECT_DIR$/functions/src/exception/userWithUsernameAlreadyExistException.ts" />
@@ -239,30 +240,38 @@
         <option value="$PROJECT_DIR$/functions/src/interfaces/dataStoredInToken.interface.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/user/user.dto.ts" />
-        <option value="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts" />
         <option value="$PROJECT_DIR$/functions/lib/controller/authenication/authenication.js" />
         <option value="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/image/image.model.ts" />
         <option value="$PROJECT_DIR$/functions/node_modules/firesql/types/firesql.d.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/image/image.dto.ts" />
-        <option value="$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts" />
         <option value="$PROJECT_DIR$/functions/lib/model/user/user.dao.js" />
-        <option value="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" />
-        <option value="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts" />
-        <option value="$PROJECT_DIR$/functions/src/app.ts" />
         <option value="$PROJECT_DIR$/functions/src/config/firebase.ts" />
-        <option value="$PROJECT_DIR$/functions/src/server.ts" />
         <option value="$PROJECT_DIR$/functions/src/storage.ts" />
         <option value="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" />
-        <option value="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" />
-        <option value="$PROJECT_DIR$/functions/src/model/user/user.model.ts" />
-        <option value="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/collection/collectionCreate.dto.ts" />
+        <option value="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" />
+        <option value="$PROJECT_DIR$/functions/src/model/user/user.model.ts" />
+        <option value="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts" />
+        <option value="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" />
+        <option value="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" />
+        <option value="$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts" />
+        <option value="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts" />
+        <option value="$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts" />
+        <option value="$PROJECT_DIR$/functions/src/app.ts" />
+        <option value="$PROJECT_DIR$/functions/src/middleware/error.middleware.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" />
+        <option value="$PROJECT_DIR$/functions/src/middleware/validation-handler.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/tags/tags.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/tags/tag.ts" />
+        <option value="$PROJECT_DIR$/functions/src/server.ts" />
         <option value="$PROJECT_DIR$/API.md" />
+        <option value="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" />
       </list>
     </option>
   </component>
@@ -281,10 +290,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="185" />
-    <option name="y" value="35" />
-    <option name="width" value="1639" />
-    <option name="height" value="1000" />
+    <option name="x" value="47" />
+    <option name="y" value="45" />
+    <option name="width" value="1587" />
+    <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -325,14 +334,6 @@
               <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="authenication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhotoHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhotoHub" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="collection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,14 +349,8 @@
               <item name="PhotoHub" type="462c0819:PsiDirectoryNode" />
               <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhotoHub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhotoHub" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="tag" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhotoHub" type="b2602c69:ProjectViewProjectNode" />
@@ -386,7 +381,7 @@
               <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="tag" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -449,22 +444,21 @@
       <workItem from="1556941793578" duration="9111000" />
       <workItem from="1557157287994" duration="724000" />
       <workItem from="1557396814707" duration="888000" />
-      <workItem from="1557496968166" duration="23195000" />
+      <workItem from="1557496968166" duration="66450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184922000" />
+    <option name="totallyTimeSpent" value="228177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19629875" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1764706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32988167" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298351" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -473,7 +467,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32907802" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26241136" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34751773" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -507,115 +501,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firebase/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="7412" column="7" selection-start-line="7412" selection-start-column="7" selection-end-line="7412" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/select/groupby.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/utils.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="52" lean-forward="true" selection-start-column="52" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/select/where.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/select/orderby.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/select/limit.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/select/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/select/groupby.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/firesql.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/firesql.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/firesql/types/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/@google-cloud/firestore/types/firestore.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="1089" column="15" selection-start-line="1089" selection-start-column="15" selection-end-line="1089" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/typescript/lib/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16490">
-          <caret line="983" column="12" selection-start-line="983" selection-start-column="12" selection-end-line="983" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/lib/exception/HttpException.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/lib/model/user/user.dao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/exception/HttpException.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/node_modules/@types/express-serve-static-core/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/firebase.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -650,16 +535,6 @@
     <entry file="file://$PROJECT_DIR$/functions/src/config/keyJWT.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/node_modules/firebase-admin/lib/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -691,80 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/server.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/logIn.dto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="n#!!block;n#createCookie#0;n#AuthenticationController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="22" column="54" lean-forward="true" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        <state relative-caret-position="51">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -778,19 +583,18 @@
     <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collectionCreate.dto.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dao.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="66" column="53" lean-forward="true" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
-          <folding>
-            <element signature="e#1#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/functions/src/exception/AuthenticationTokenMissingException.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/exception/UserWithUsernameAlreadyExistException.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/exception/WrongCredentialsException.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dto.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -799,20 +603,829 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts">
+    <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.model.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+          <folding>
+            <element signature="e#1#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/lib/middleware/validation-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/express-validator/check/check.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1579">
+          <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/logIn.dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/lib/middleware/auth.middleware.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/exception/WrongAuthenticationTokenException.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/@types/express-serve-static-core/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/middleware/error.middleware.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="27" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/express-validator/check/validation-result.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/express-validator/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="149" column="1" lean-forward="true" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/middleware/validation-handler.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="n#!!block;n#createCookie#0;n#AuthenticationController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/D:/Code_Project/00_DoAn/PhotoHub/functions/src">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/functions/src</OriginalElement>
+          <nodes>
+            <node x="2911.462279040405" y="368.0">$PROJECT_DIR$/functions/src/exception/AuthenticationTokenMissingException.ts#HttpException#7;</node>
+            <node x="2452.8585700757585" y="79.0">$PROJECT_DIR$/functions/src/exception/HttpException.ts</node>
+            <node x="2573.462279040405" y="368.0">$PROJECT_DIR$/functions/src/exception/UserWithUsernameAlreadyExistException.ts#HttpException#7;</node>
+            <node x="3232.462279040405" y="368.0">$PROJECT_DIR$/functions/src/exception/WrongAuthenticationTokenException.ts#HttpException#7;</node>
+            <node x="2111.462279040405" y="368.0">$PROJECT_DIR$/functions/src/exception/WrongCredentialsException.ts#HttpException#7;</node>
+            <node x="4441.311758207074" y="646.0">$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;</node>
+            <node x="3103.4784248737396" y="487.0">$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;</node>
+            <node x="760.1198547979809" y="487.0">$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;</node>
+            <node x="1132.369854797981" y="646.0">$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;</node>
+            <node x="2378.462279040405" y="368.0">$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts#firestoreRef#8;</node>
+            <node x="2897.369854797981" y="646.0">$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;</node>
+            <node x="3687.962279040405" y="487.0">$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts#Router#9;</node>
+            <node x="1685.462279040405" y="368.0">$PROJECT_DIR$/functions/src/interfaces/dataStoredInToken.interface.ts</node>
+            <node x="4364.462279040405" y="368.0">$PROJECT_DIR$/functions/src/middleware/error.middleware.ts#HttpException#66;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#NextFunction#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Request#23;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Response#32;</node>
+            <node x="666.5104797979809" y="646.0">$PROJECT_DIR$/functions/node_modules/@google-cloud/storage/build/src/file.d.ts#GetSignedUrlConfig#1245;</node>
+            <node x="1154.8585700757587" y="79.0">$PROJECT_DIR$/functions/src/config/firebase.ts#admin#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/config/firebase.ts#firestoreRef#187;</node>
+            <node x="3931.962279040405" y="368.0">$PROJECT_DIR$/functions/node_modules/@google-cloud/firestore/types/firestore.d.ts#Query#29063;</node>
+            <node x="3906.962279040405" y="487.0">$PROJECT_DIR$/functions/src/model/image/image.dao.ts#Query#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/image/image.dao.ts#firestoreRef#8;</node>
+            <node x="3796.432354797981" y="646.0">$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;</node>
+            <node x="4544.311758207074" y="646.0">$PROJECT_DIR$/functions/node_modules/reflect-metadata/index.d.ts</node>
+            <node x="3775.8585700757585" y="79.0">$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;</node>
+            <node x="1127.3585700757587" y="0.0">$PROJECT_DIR$/functions/node_modules/firebase-admin/lib/index.d.ts</node>
+            <node x="856.5104797979809" y="646.0">$PROJECT_DIR$/functions/node_modules/firebase-functions/lib/index.d.ts</node>
+            <node x="491.5161458333346" y="368.0">$PROJECT_DIR$/functions/node_modules/express-validator/check/index.d.ts</node>
+            <node x="4317.962279040405" y="487.0">$PROJECT_DIR$/functions/node_modules/@types/cors/index.d.ts</node>
+            <node x="700.5161458333346" y="368.0">$PROJECT_DIR$/functions/node_modules/@types/bcrypt/index.d.ts</node>
+            <node x="1954.462279040405" y="368.0">$PROJECT_DIR$/functions/node_modules/@types/jsonwebtoken/index.d.ts</node>
+            <node x="4160.962279040405" y="487.0">$PROJECT_DIR$/functions/node_modules/@types/body-parser/index.d.ts</node>
+            <node x="4475.962279040405" y="487.0">$PROJECT_DIR$/functions/node_modules/express-validator/index.d.ts</node>
+            <node x="1544.462279040405" y="368.0">$PROJECT_DIR$/functions/src/config/keyJWT.ts</node>
+            <node x="1011.1198547979809" y="487.0">$PROJECT_DIR$/functions/src/controller/authenication/logIn.dto.ts</node>
+            <node x="3561.462279040405" y="368.0">$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts#Request#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/interfaces/requestUser.interface.ts#UserModel#42;</node>
+            <node x="3436.0365214646476" y="745.0">$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;</node>
+            <node x="786.4999999999998" y="79.0">$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts</node>
+            <node x="370.7604797979809" y="745.0">$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;</node>
+            <node x="237.5161458333348" y="487.0">$PROJECT_DIR$/functions/src/interfaces/tokenData.interface.ts</node>
+            <node x="1131.619854797981" y="368.0">$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;</node>
+            <node x="654.4999999999998" y="79.0">$PROJECT_DIR$/functions/src/model/user/user.dto.ts</node>
+            <node x="1298.8585700757587" y="79.0">$PROJECT_DIR$/functions/src/model/user/user.model.ts</node>
+            <node x="460.5161458333346" y="487.0">$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts#index.d.ts#17;</node>
+            <node x="1316.462279040405" y="368.0">$PROJECT_DIR$/functions/src/middleware/validation-handler.ts#HttpException#7;</node>
+            <node x="456.5104797979809" y="646.0">$PROJECT_DIR$/functions/node_modules/@types/node/index.d.ts#spawn#91789;</node>
+            <node x="46.0" y="646.0">fs</node>
+            <node x="337.51047979798113" y="646.0">mkdirp-promise</node>
+            <node x="0.0" y="646.0">os</node>
+            <node x="608.5104797979809" y="646.0">path</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;" target="$PROJECT_DIR$/functions/node_modules/@types/body-parser/index.d.ts">
+              <point x="-20.75" y="-14.5" />
+              <point x="4462.061758207074" y="556.0" />
+              <point x="4229.462279040405" y="556.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="45.59999999999991" y="-14.5" />
+              <point x="1234.2198547979808" y="248.0" />
+              <point x="2461.6085700757585" y="248.0" />
+              <point x="-78.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts#Request#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/interfaces/requestUser.interface.ts#UserModel#42;">
+              <point x="88.44444444444434" y="-14.5" />
+              <point x="3291.422869318184" y="467.0" />
+              <point x="3596.462279040405" y="467.0" />
+              <point x="-70.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/model/user/user.model.ts">
+              <point x="5.96875" y="-14.5" />
+              <point x="1233.838604797981" y="546.0" />
+              <point x="1305.962279040405" y="546.0" />
+              <point x="1305.962279040405" y="238.0" />
+              <point x="1362.8585700757587" y="238.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;" target="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;">
+              <point x="46.0" y="-14.5" />
+              <point x="921.1198547979809" y="457.0" />
+              <point x="1150.619854797981" y="457.0" />
+              <point x="-38.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/interfaces/tokenData.interface.ts">
+              <point x="-77.59375" y="-14.5" />
+              <point x="1150.276104797981" y="616.0" />
+              <point x="339.0161458333348" y="616.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts#Request#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/interfaces/requestUser.interface.ts#UserModel#42;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="52.5" y="-14.5" />
+              <point x="3718.962279040405" y="338.0" />
+              <point x="3831.9040246212135" y="338.0" />
+              <point x="-12.454545454545496" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="44.22222222222217" y="-14.5" />
+              <point x="3247.2006470959623" y="447.0" />
+              <point x="3539.962279040405" y="447.0" />
+              <point x="3539.962279040405" y="318.0" />
+              <point x="3806.9949337121225" y="318.0" />
+              <point x="-37.36363636363649" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/error.middleware.ts#HttpException#66;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#NextFunction#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Request#23;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Response#32;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="-75.75" y="-14.5" />
+              <point x="4389.712279040405" y="168.0" />
+              <point x="2619.1085700757585" y="168.0" />
+              <point x="78.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/validation-handler.ts#HttpException#7;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="1420.462279040405" y="268.0" />
+              <point x="2496.6085700757585" y="268.0" />
+              <point x="-43.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;" target="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;">
+              <point x="-23.25" y="-14.5" />
+              <point x="3459.2865214646476" y="715.0" />
+              <point x="1227.869854797981" y="715.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="-30.40000000000009" y="-14.5" />
+              <point x="2942.9698547979806" y="596.0" />
+              <point x="2900.962279040405" y="596.0" />
+              <point x="2900.962279040405" y="308.0" />
+              <point x="3794.5403882575765" y="308.0" />
+              <point x="-49.81818181818198" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/exception/AuthenticationTokenMissingException.ts#HttpException#7;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="3061.962279040405" y="278.0" />
+              <point x="2566.6085700757585" y="278.0" />
+              <point x="26.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="34.58333333333303" y="-14.5" />
+              <point x="4517.395091540407" y="626.0" />
+              <point x="4663.462279040405" y="626.0" />
+              <point x="4663.462279040405" y="128.0" />
+              <point x="3906.6312973484864" y="128.0" />
+              <point x="62.27272727272748" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts#firestoreRef#8;" target="$PROJECT_DIR$/functions/src/config/firebase.ts#admin#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/config/firebase.ts#firestoreRef#187;">
+              <point x="0.0" y="-14.5" />
+              <point x="2465.962279040405" y="218.0" />
+              <point x="1232.3585700757587" y="218.0" />
+              <point x="15.5" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="92.0" y="-14.5" />
+              <point x="967.1198547979809" y="467.0" />
+              <point x="1294.962279040405" y="467.0" />
+              <point x="1294.962279040405" y="258.0" />
+              <point x="2479.1085700757585" y="258.0" />
+              <point x="-61.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/src/config/keyJWT.ts">
+              <point x="-66.33333333333348" y="-14.5" />
+              <point x="3136.6450915404066" y="447.0" />
+              <point x="1634.462279040405" y="447.0" />
+              <point x="30.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;" target="$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts#Router#9;">
+              <point x="60.80000000000018" y="-14.5" />
+              <point x="3034.1698547979813" y="626.0" />
+              <point x="3762.587279040405" y="626.0" />
+              <point x="-24.875" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts#index.d.ts#17;" target="$PROJECT_DIR$/functions/node_modules/express-validator/check/index.d.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/exception/WrongAuthenticationTokenException.ts#HttpException#7;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="3380.962279040405" y="268.0" />
+              <point x="2584.1085700757585" y="268.0" />
+              <point x="43.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;" target="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts#Request#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/interfaces/requestUser.interface.ts#UserModel#42;">
+              <point x="30.40000000000009" y="-14.5" />
+              <point x="3003.7698547979808" y="606.0" />
+              <point x="3666.462279040405" y="606.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;" target="$PROJECT_DIR$/functions/src/model/user/user.dto.ts">
+              <point x="-46.0" y="-14.5" />
+              <point x="829.1198547979809" y="467.0" />
+              <point x="848.0161458333346" y="467.0" />
+              <point x="848.0161458333346" y="338.0" />
+              <point x="710.4999999999998" y="338.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;" target="$PROJECT_DIR$/functions/src/middleware/error.middleware.ts#HttpException#66;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#NextFunction#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Request#23;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Response#32;">
+              <point x="6.91666666666697" y="-14.5" />
+              <point x="4489.728424873741" y="536.0" />
+              <point x="4465.462279040405" y="536.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;" target="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts#firestoreRef#8;">
+              <point x="-60.80000000000018" y="-14.5" />
+              <point x="2912.569854797981" y="606.0" />
+              <point x="2465.962279040405" y="606.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts#Router#9;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="0.0" y="-14.5" />
+              <point x="3787.462279040405" y="348.0" />
+              <point x="3844.3585700757585" y="348.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/node_modules/@types/jsonwebtoken/index.d.ts">
+              <point x="-22.111111111111313" y="-14.5" />
+              <point x="3180.8673137626283" y="427.0" />
+              <point x="2057.212279040405" y="427.0" />
+              <point x="34.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;" target="$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts#Router#9;">
+              <point x="-15.666666666666515" y="-14.5" />
+              <point x="3874.765688131314" y="576.0" />
+              <point x="3812.337279040405" y="576.0" />
+              <point x="24.875" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;" target="$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="875.1198547979809" y="467.0" />
+              <point x="873.0161458333346" y="467.0" />
+              <point x="873.0161458333346" y="328.0" />
+              <point x="815.9999999999998" y="328.0" />
+              <point x="-59.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/config/keyJWT.ts">
+              <point x="29.84375" y="-14.5" />
+              <point x="1257.713604797981" y="566.0" />
+              <point x="1574.462279040405" y="566.0" />
+              <point x="-30.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/src/exception/AuthenticationTokenMissingException.ts#HttpException#7;">
+              <point x="0.0" y="-14.5" />
+              <point x="3202.9784248737396" y="417.0" />
+              <point x="3061.962279040405" y="417.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;">
+              <point x="-5.96875" y="-14.5" />
+              <point x="1221.901104797981" y="556.0" />
+              <point x="1188.619854797981" y="556.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/error.middleware.ts#HttpException#66;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#NextFunction#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Request#23;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/error.middleware.ts#Response#32;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="75.75" y="-14.5" />
+              <point x="4541.212279040405" y="138.0" />
+              <point x="3894.1767518939405" y="138.0" />
+              <point x="49.81818181818198" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;" target="$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts">
+              <point x="-22.799999999999955" y="-14.5" />
+              <point x="1165.819854797981" y="298.0" />
+              <point x="933.9999999999998" y="298.0" />
+              <point x="59.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/image/image.dao.ts#Query#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/image/image.dao.ts#firestoreRef#8;" target="$PROJECT_DIR$/functions/src/config/firebase.ts#admin#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/config/firebase.ts#firestoreRef#187;">
+              <point x="-34.5" y="-14.5" />
+              <point x="3941.462279040405" y="467.0" />
+              <point x="3921.462279040405" y="467.0" />
+              <point x="3921.462279040405" y="198.0" />
+              <point x="1263.3585700757587" y="198.0" />
+              <point x="46.5" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts#Request#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/interfaces/requestUser.interface.ts#UserModel#42;" target="$PROJECT_DIR$/functions/src/model/user/user.model.ts">
+              <point x="-52.5" y="-14.5" />
+              <point x="3613.962279040405" y="208.0" />
+              <point x="1405.5252367424255" y="208.0" />
+              <point x="42.66666666666674" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/middleware/validation-handler.ts#HttpException#7;">
+              <point x="17.90625" y="-14.5" />
+              <point x="1245.776104797981" y="556.0" />
+              <point x="1420.462279040405" y="556.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;" target="$PROJECT_DIR$/functions/src/model/user/user.dto.ts">
+              <point x="-45.59999999999991" y="-14.5" />
+              <point x="1143.019854797981" y="308.0" />
+              <point x="747.833333333333" y="308.0" />
+              <point x="37.33333333333337" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;" target="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;">
+              <point x="23.25" y="-14.5" />
+              <point x="3505.7865214646476" y="715.0" />
+              <point x="4482.811758207074" y="715.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts#Router#9;">
+              <point x="89.53125" y="-14.5" />
+              <point x="1317.401104797981" y="616.0" />
+              <point x="3712.837279040405" y="616.0" />
+              <point x="-74.625" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/exception/WrongCredentialsException.ts#HttpException#7;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="2234.962279040405" y="288.0" />
+              <point x="2531.6085700757585" y="288.0" />
+              <point x="-8.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/config/firebase.ts#admin#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/config/firebase.ts#firestoreRef#187;" target="$PROJECT_DIR$/functions/node_modules/firebase-admin/lib/index.d.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;" target="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;">
+              <point x="0.0" y="-14.5" />
+              <point x="2973.369854797981" y="596.0" />
+              <point x="3153.2284248737396" y="596.0" />
+              <point x="-49.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/exception/UserWithUsernameAlreadyExistException.ts#HttpException#7;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="0.0" y="-14.5" />
+              <point x="2731.962279040405" y="288.0" />
+              <point x="2549.1085700757585" y="288.0" />
+              <point x="8.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="mkdirp-promise">
+              <point x="-10.5" y="-14.5" />
+              <point x="444.2604797979809" y="695.0" />
+              <point x="387.01047979798113" y="695.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/src/interfaces/dataStoredInToken.interface.ts">
+              <point x="-44.22222222222217" y="-14.5" />
+              <point x="3158.756202651518" y="437.0" />
+              <point x="1871.462279040405" y="437.0" />
+              <point x="62.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;" target="$PROJECT_DIR$/functions/node_modules/@types/cors/index.d.ts">
+              <point x="-6.91666666666697" y="-14.5" />
+              <point x="4475.895091540407" y="546.0" />
+              <point x="4386.462279040405" y="546.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;" target="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;">
+              <point x="7.75" y="-14.5" />
+              <point x="3490.2865214646476" y="705.0" />
+              <point x="3890.432354797981" y="705.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;" target="$PROJECT_DIR$/functions/node_modules/firebase-functions/lib/index.d.ts">
+              <point x="-38.75" y="-14.5" />
+              <point x="3443.7865214646476" y="725.0" />
+              <point x="1001.2604797979809" y="725.0" />
+              <point x="48.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;" target="$PROJECT_DIR$/functions/node_modules/reflect-metadata/index.d.ts">
+              <point x="38.75" y="-14.5" />
+              <point x="3521.2865214646476" y="725.0" />
+              <point x="4632.311758207074" y="725.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/interfaces/dataStoredInToken.interface.ts">
+              <point x="53.71875" y="-14.5" />
+              <point x="1281.588604797981" y="586.0" />
+              <point x="1747.462279040405" y="586.0" />
+              <point x="-62.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="fs">
+              <point x="-52.5" y="-14.5" />
+              <point x="402.2604797979809" y="715.0" />
+              <point x="57.0" y="715.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="$PROJECT_DIR$/functions/src/config/firebase.ts#admin#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/config/firebase.ts#firestoreRef#187;">
+              <point x="-31.5" y="-14.5" />
+              <point x="423.2604797979809" y="705.0" />
+              <point x="78.5" y="705.0" />
+              <point x="78.5" y="348.0" />
+              <point x="1170.3585700757587" y="348.0" />
+              <point x="-46.5" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;" target="$PROJECT_DIR$/functions/src/interfaces/controller.interface.ts#Router#9;">
+              <point x="-34.58333333333303" y="-14.5" />
+              <point x="4448.228424873741" y="566.0" />
+              <point x="3862.087279040405" y="566.0" />
+              <point x="74.625" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;" target="$PROJECT_DIR$/functions/node_modules/@types/bcrypt/index.d.ts">
+              <point x="-92.0" y="-14.5" />
+              <point x="783.1198547979809" y="467.0" />
+              <point x="803.2661458333346" y="467.0" />
+              <point x="34.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/app.ts#Controller#86;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#bodyParser#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#cors#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#errorMiddleware#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/app.ts#expressValidator#224;" target="$PROJECT_DIR$/functions/node_modules/express-validator/index.d.ts">
+              <point x="20.75" y="-14.5" />
+              <point x="4503.561758207074" y="616.0" />
+              <point x="4564.462279040405" y="616.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="$PROJECT_DIR$/functions/node_modules/@types/node/index.d.ts#spawn#91789;">
+              <point x="10.5" y="-14.5" />
+              <point x="465.2604797979809" y="695.0" />
+              <point x="522.5104797979809" y="695.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/node_modules/@types/jsonwebtoken/index.d.ts">
+              <point x="77.59375" y="-14.5" />
+              <point x="1305.463604797981" y="606.0" />
+              <point x="1988.712279040405" y="606.0" />
+              <point x="-34.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/image/image.dao.ts#Query#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/image/image.dao.ts#firestoreRef#8;" target="$PROJECT_DIR$/functions/node_modules/@google-cloud/firestore/types/firestore.d.ts#Query#29063;">
+              <point x="34.5" y="-14.5" />
+              <point x="4010.462279040405" y="467.0" />
+              <point x="4030.462279040405" y="467.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="os">
+              <point x="-73.5" y="-14.5" />
+              <point x="381.2604797979809" y="725.0" />
+              <point x="13.0" y="725.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/controller/authenication/logIn.dto.ts">
+              <point x="-17.90625" y="-14.5" />
+              <point x="1209.963604797981" y="566.0" />
+              <point x="1094.619854797981" y="566.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;">
+              <point x="-88.44444444444434" y="-14.5" />
+              <point x="3114.5339804292953" y="457.0" />
+              <point x="1226.619854797981" y="457.0" />
+              <point x="38.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="78.33333333333303" y="-14.5" />
+              <point x="3968.765688131314" y="626.0" />
+              <point x="4150.462279040405" y="626.0" />
+              <point x="4150.462279040405" y="178.0" />
+              <point x="3856.8131155303045" y="178.0" />
+              <point x="12.454545454545496" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;" target="$PROJECT_DIR$/functions/src/exception/WrongAuthenticationTokenException.ts#HttpException#7;">
+              <point x="22.111111111111313" y="-14.5" />
+              <point x="3225.089535984851" y="437.0" />
+              <point x="3380.962279040405" y="437.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="path">
+              <point x="31.5" y="-14.5" />
+              <point x="486.2604797979809" y="705.0" />
+              <point x="627.5104797979809" y="705.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;" target="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts#Request#9;D:/Code_Project/00_DoAn/PhotoHub/functions/src/interfaces/requestUser.interface.ts#UserModel#42;">
+              <point x="-47.0" y="-14.5" />
+              <point x="3843.432354797981" y="586.0" />
+              <point x="3677.462279040405" y="586.0" />
+              <point x="3677.462279040405" y="467.0" />
+              <point x="3736.462279040405" y="467.0" />
+              <point x="70.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="47.0" y="-14.5" />
+              <point x="3937.432354797981" y="616.0" />
+              <point x="4139.462279040405" y="616.0" />
+              <point x="4139.462279040405" y="188.0" />
+              <point x="2601.6085700757585" y="188.0" />
+              <point x="61.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="$PROJECT_DIR$/functions/node_modules/firebase-functions/lib/index.d.ts">
+              <point x="73.5" y="-14.5" />
+              <point x="528.2604797979809" y="725.0" />
+              <point x="904.7604797979809" y="725.0" />
+              <point x="-48.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/node_modules/@types/bcrypt/index.d.ts">
+              <point x="-53.71875" y="-14.5" />
+              <point x="1174.151104797981" y="596.0" />
+              <point x="734.7661458333346" y="596.0" />
+              <point x="-34.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/model/user/user.dto.ts">
+              <point x="-89.53125" y="-14.5" />
+              <point x="1138.338604797981" y="626.0" />
+              <point x="227.0161458333348" y="626.0" />
+              <point x="227.0161458333348" y="338.0" />
+              <point x="673.1666666666665" y="338.0" />
+              <point x="-37.33333333333326" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;" target="$PROJECT_DIR$/functions/src/config/firebase.ts#admin#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/config/firebase.ts#firestoreRef#187;">
+              <point x="0.0" y="-14.5" />
+              <point x="1188.619854797981" y="348.0" />
+              <point x="1201.3585700757587" y="348.0" />
+              <point x="-15.5" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;">
+              <point x="-41.78125" y="-14.5" />
+              <point x="1186.088604797981" y="586.0" />
+              <point x="875.1198547979809" y="586.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts">
+              <point x="-29.84375" y="-14.5" />
+              <point x="1198.026104797981" y="576.0" />
+              <point x="1000.6198547979809" y="576.0" />
+              <point x="1000.6198547979809" y="318.0" />
+              <point x="874.9999999999998" y="318.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;" target="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts#AuthenticationTokenMissingException#319;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#DataStoredInToken#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#NextFunction#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#RequestWithUser#131;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#Response#22;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#UserDAO#273;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#WrongAuthenticationTokenException#419;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#jwt#55;D:/Code_Project/00_DoAn/PhotoHub/functions/src/middleware/auth.middleware.ts#keyJWT#92;">
+              <point x="-78.33333333333348" y="-14.5" />
+              <point x="3812.099021464647" y="596.0" />
+              <point x="3252.7284248737396" y="596.0" />
+              <point x="49.75" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/node_modules/@types/express/index.d.ts#NextFunction#2740;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Request#2797;D:/Code_Project/00_DoAn/PhotoHub/functions/node_modules/@types/express/index.d.ts#Response#2976;Router;">
+              <point x="65.65625" y="-14.5" />
+              <point x="1293.526104797981" y="596.0" />
+              <point x="1943.962279040405" y="596.0" />
+              <point x="1943.962279040405" y="298.0" />
+              <point x="3782.0858428030315" y="298.0" />
+              <point x="-62.27272727272748" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#HttpException#159;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#ImageDAO#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#RequestWithUser#281;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#authMiddleware#218;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/image_query/image_search.ts#express#71;" target="$PROJECT_DIR$/functions/src/model/image/image.dao.ts#Query#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/image/image.dao.ts#firestoreRef#8;">
+              <point x="15.666666666666515" y="-14.5" />
+              <point x="3906.099021464647" y="606.0" />
+              <point x="3975.962279040405" y="606.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts#index.d.ts#17;">
+              <point x="-65.65625" y="-14.5" />
+              <point x="1162.213604797981" y="606.0" />
+              <point x="586.0161458333346" y="606.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts#AuthenicationService#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#Controller#43;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#DataStoredInToken#424;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#HttpException#581;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#LogInDTO#243;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#SignUpDTO#640;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#TokenData#362;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDAO#279;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserDTO#194;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#UserModel#678;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#bcrypt#328;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#express#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#jwt#502;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#keyJWT#539;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validateInput#731;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/authenication/authenication.ts#validationHandler#803;" target="$PROJECT_DIR$/functions/src/exception/HttpException.ts">
+              <point x="41.78125" y="-14.5" />
+              <point x="1269.651104797981" y="576.0" />
+              <point x="1674.962279040405" y="576.0" />
+              <point x="1674.962279040405" y="278.0" />
+              <point x="2514.1085700757585" y="278.0" />
+              <point x="-26.25" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/storage-trigger/storage.ts#GetSignedUrlConfig#8;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#admin#295;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#fs#266;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#functions#65;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#mkdirp#114;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#os#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#path#210;D:/Code_Project/00_DoAn/PhotoHub/functions/src/storage-trigger/storage.ts#spawn#164;" target="$PROJECT_DIR$/functions/node_modules/@google-cloud/storage/build/src/file.d.ts#GetSignedUrlConfig#1245;">
+              <point x="52.5" y="-14.5" />
+              <point x="507.2604797979809" y="715.0" />
+              <point x="751.5104797979809" y="715.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/server.ts#App#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#AuthenticationController#32;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#Collection#253;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#ImageQuery#140;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#functions#204;D:/Code_Project/00_DoAn/PhotoHub/functions/src/server.ts#index.d.ts#106;" target="$PROJECT_DIR$/functions/src/controller/collection/collection.ts#CollectionDAO#240;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#Controller#7;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#RequestWithUser#170;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#authMiddleware#107;D:/Code_Project/00_DoAn/PhotoHub/functions/src/controller/collection/collection.ts#express#71;">
+              <point x="-7.75" y="-14.5" />
+              <point x="3474.7865214646476" y="705.0" />
+              <point x="2973.369854797981" y="705.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="$PROJECT_DIR$/functions/src/model/user/user.dao.ts#HttpException#199;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#SignUpDTO#132;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserDTO#60;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#UserModel#94;D:/Code_Project/00_DoAn/PhotoHub/functions/src/model/user/user.dao.ts#firestoreRef#9;" target="$PROJECT_DIR$/functions/src/model/user/user.model.ts">
+              <point x="22.799999999999955" y="-14.5" />
+              <point x="1211.4198547979809" y="228.0" />
+              <point x="1320.191903409092" y="228.0" />
+              <point x="-42.66666666666674" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8" x="2144.0" y="490.0" />
+          <SelectedNodes>
+            <node>$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts#HttpException#139;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#SignUpDTO#198;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDAO#90;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#UserDTO#41;D:/Code_Project/00_DoAn/PhotoHub/functions/src/services/authenication/authenication.service.ts#bcrypt#7;</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Overview</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/node_modules/@google-cloud/firestore/types/firestore.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="453" column="19" selection-start-line="453" selection-start-column="19" selection-end-line="453" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/lib/controller/tag/tag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="35" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts">
+    <entry file="file://$PROJECT_DIR$/functions/src/server.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        <state relative-caret-position="133">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="148">
+            <caret line="167" column="45" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/tag/tag.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
@@ -821,36 +1434,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="17">
+          <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/API.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-360">
-            <caret line="139" column="51" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
         </state>
       </provider>
     </entry>

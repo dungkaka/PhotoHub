@@ -12,6 +12,8 @@ import keyJWT from "../../config/keyJWT";
 import HttpException from "../../exception/HttpException";
 import SignUpDTO from "./signUp.dto";
 import UserModel from "../../model/user/user.model";
+import validateInput from "../../middleware/validate-input.middleware";
+import validationHandler from "../../middleware/validation-handler";
 
 
 class AuthenticationController implements Controller {
@@ -31,13 +33,19 @@ class AuthenticationController implements Controller {
             res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
             next();
         });
-        this.router.post(`${this.path}/signup`, this.registration);
+
+        // @ts-ignore
+        this.router.post(`${this.path}/signup`, validateInput('signUp'), this.registration);
         this.router.post(`${this.path}/login`, this.loggingIn);
     }
 
     private registration = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-        const userSignUp: SignUpDTO = request.body;
         try {
+            // @ts-ignore
+            const result = await request.getValidationResult();
+            validationHandler(result);
+
+            const userSignUp: SignUpDTO = request.body;
             const { user } = await this.authenicationService.register(userSignUp);
 
             // response.setHeader('Set-Cookie', cookie);
