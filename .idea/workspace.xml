@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,7 +38,7 @@
         <counts>
           <entry key="js" value="204" />
           <entry key="json" value="18" />
-          <entry key="md" value="1168" />
+          <entry key="md" value="1177" />
           <entry key="ts" value="29591" />
         </counts>
       </usages-collector>
@@ -52,7 +46,7 @@
         <counts>
           <entry key="JSON" value="18" />
           <entry key="JavaScript" value="204" />
-          <entry key="Markdown" value="689" />
+          <entry key="Markdown" value="698" />
           <entry key="PLAIN_TEXT" value="479" />
           <entry key="TypeScript" value="29591" />
         </counts>
@@ -124,8 +118,8 @@
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-170">
-                <caret line="189" column="53" selection-start-line="189" selection-start-column="53" selection-end-line="189" selection-end-column="53" />
+              <first_editor relative-caret-position="306">
+                <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               </first_editor>
               <second_editor />
             </state>
@@ -178,7 +172,7 @@
         <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -406,12 +400,12 @@
       <workItem from="1556941793578" duration="9111000" />
       <workItem from="1557157287994" duration="724000" />
       <workItem from="1557396814707" duration="888000" />
-      <workItem from="1557496968166" duration="74976000" />
+      <workItem from="1557496968166" duration="75047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236703000" />
+    <option name="totallyTimeSpent" value="236774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="198" y="28" width="1269" height="800" extended-state="0" />
@@ -1352,7 +1346,7 @@
     <entry file="file://$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1414,8 +1408,8 @@
     <entry file="file://$PROJECT_DIR$/API.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-170">
-            <caret line="189" column="53" selection-start-line="189" selection-start-column="53" selection-end-line="189" selection-end-column="53" />
+          <first_editor relative-caret-position="306">
+            <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           </first_editor>
           <second_editor />
         </state>

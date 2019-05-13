@@ -22,7 +22,7 @@
          *GET   api/images*
     
     + Get images by tag:
-         *POST   api/images*
+         *POST   api/images/search*
 
     + Get collections (USER):
          *GET   api/collections*
