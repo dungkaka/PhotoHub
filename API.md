@@ -1,7 +1,7 @@
 ### Brief API doc
 
 + Endpoints:
-    + Pre-endpoint: **api = "https://photohub-e7e04.firebaseapp.com/"**
+    + Pre-endpoint: **api = "https://photohub-e7e04.firebaseapp.com/api/v1"**
 
     + Sign up:
          *POST  api/signup*

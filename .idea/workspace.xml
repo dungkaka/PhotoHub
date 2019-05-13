@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/middleware/error.middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/middleware/validation-handler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/server.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,7 +38,7 @@
         <counts>
           <entry key="js" value="204" />
           <entry key="json" value="18" />
-          <entry key="md" value="1044" />
+          <entry key="md" value="1052" />
           <entry key="ts" value="27971" />
         </counts>
       </usages-collector>
@@ -65,7 +46,7 @@
         <counts>
           <entry key="JSON" value="18" />
           <entry key="JavaScript" value="204" />
-          <entry key="Markdown" value="565" />
+          <entry key="Markdown" value="573" />
           <entry key="PLAIN_TEXT" value="479" />
           <entry key="TypeScript" value="27971" />
         </counts>
@@ -106,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -154,12 +135,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="148">
-                <caret line="167" column="45" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
+              <first_editor relative-caret-position="170">
+                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -268,10 +249,10 @@
         <option value="$PROJECT_DIR$/functions/src/controller/tags/tags.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/tags/tag.ts" />
         <option value="$PROJECT_DIR$/functions/src/server.ts" />
-        <option value="$PROJECT_DIR$/API.md" />
         <option value="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" />
+        <option value="$PROJECT_DIR$/API.md" />
       </list>
     </option>
   </component>
@@ -444,17 +425,18 @@
       <workItem from="1556941793578" duration="9111000" />
       <workItem from="1557157287994" duration="724000" />
       <workItem from="1557396814707" duration="888000" />
-      <workItem from="1557496968166" duration="66450000" />
+      <workItem from="1557496968166" duration="66514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228177000" />
+    <option name="totallyTimeSpent" value="228241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1764706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1764706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -467,7 +449,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32907802" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34751773" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34751773" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1393,21 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/API.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="148">
-            <caret line="167" column="45" selection-start-line="167" selection-start-column="45" selection-end-line="167" selection-end-column="45" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1439,6 +1406,21 @@
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
         </state>
       </provider>
     </entry>
