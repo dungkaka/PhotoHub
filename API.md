@@ -154,31 +154,31 @@
                             "message": "string"
                         }
                         ```
-        + **Get All Image**
-        
-                - GET  api/images
-                - Header: Authorization: Bearer TOKEN
-                - Request payload: None
-                    - Response:
-                    + OK:
-                        - Status Code: 200
-                        - Payload:
-                            ```
-                            {
-                                list of image
-                            }
-                            ```
-        
-                    + Bad request (Invalid Message, ...):
-                        - Status Code: 400
-                        - Payload:
-                            ```
-                            {
-                                "status": false,
-                                "code": int,
-                                "message": "string"
-                            }
-                            ```
+    + **Get All Image**
+    
+            - GET  api/images
+            - Header: Authorization: Bearer TOKEN
+            - Request payload: None
+                - Response:
+                + OK:
+                    - Status Code: 200
+                    - Payload:
+                        ```
+                        {
+                            list of image
+                        }
+                        ```
+    
+                + Bad request (Invalid Message, ...):
+                    - Status Code: 400
+                    - Payload:
+                        ```
+                        {
+                            "status": false,
+                            "code": int,
+                            "message": "string"
+                        }
+                        ```
                        
     + **Get Image By Tag**
 
@@ -187,33 +187,20 @@
         - Request payload:
             ```
             {
-                tags: {
-                    "field_1": true,
-                    "field_2": true,
-                    ...
-                }
+                tags: ["field_1", "field_2", "field_3", ...]
             }
             
             where tags is list of tags that user choose for searching images.
-            "fiel_1", "field_2" is the name of tags that user choose, and value is true.
+            "field_1", "field_2" is the name of tags that user choose, and value is true.
 
             Notice that every field that value equal {"", null, false} will be ignore for search.
             For example:
             {
-                tags: {
-                    "number_2": true,
-                    "ao dai": true,
-                    "cay coi": "",
-                    "xe dap": null
-
-                }
+                tags: ["2", "younger", false, ""]
             }
             equals to
             {
-                tags: {
-                    "number_2": true,
-                    "ao dai": true
-                }
+                tags: tags: ["1", "younger"]
             }
 
             You can test 2 examples above for same result

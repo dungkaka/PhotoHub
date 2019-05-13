@@ -20,7 +20,7 @@ class TagDAO {
         return combine;
     };
 
-    static addTag = async (tags: any) => {
+    static updateTag = async (tags: any) => {
         const TagsQuerySnapshot = await TagDAO.tagsRef
             .where("category", "==", tags.category)
             .get();
@@ -29,8 +29,8 @@ class TagDAO {
             await TagDAO.tagsRef.add(tags);
             return tags;
         } else {
-            let returnTags: any;
-            TagsQuerySnapshot.forEach(async (doc) => {
+            let tagsResults: any;
+            for (const doc of TagsQuerySnapshot.docs)  {
                 const tagsDB = doc.data().tags ? doc.data().tags: [];
                 const tagsInput = tags.tags;
                 const combine = TagDAO.mergeTagsArray(tagsDB, tagsInput);
@@ -41,10 +41,10 @@ class TagDAO {
                     merge: true
                 });
 
-                returnTags = combine;
-            })
+                tagsResults = combine;
+            }
 
-            return returnTags;
+            return tagsResults;
         }
     };
 

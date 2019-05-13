@@ -5,6 +5,12 @@ class ImageDAO {
     private static imagesRef = firestoreRef.collection("images");
 
 
+    public static addImage = async (images: any) => {
+        const imageRef = await ImageDAO.imagesRef.add(images);
+        const image = await imageRef.get();
+        return image.data();
+    };
+
     public static getAllImage = async () => {
         const userDataQuerySnapshot = await ImageDAO.imagesRef.get();
 
@@ -16,19 +22,24 @@ class ImageDAO {
         return listImage;
     }
 
-    public static findImageByTag = async (tag: any) => {
+    public static findImageByTag = async (tags: any[]) => {
         let userDataQuerySnapshot: Query = ImageDAO.imagesRef;
-        for (const field in tag) {
-            if (tag[field] && tag[field] !== "") {
-                userDataQuerySnapshot = userDataQuerySnapshot.where(`tags.${field}`, "==", tag[field]);
+        tags.forEach(tag => {
+            if (tag !== false && tag !== "") {
+                userDataQuerySnapshot = userDataQuerySnapshot.where(`tags.${tag}`, "==", true);
             }
-        }
+        })
 
         const imageList = await userDataQuerySnapshot.get();
 
         const listImage: any[] = [];
         imageList.forEach((doc) => {
-            listImage.push({...doc.data(), image_id: doc.id});
+            const tagsModel = doc.data().tags;
+            const tagsArray = [];
+            for (const field in tagsModel) {
+                tagsArray.push(field);
+            }
+            listImage.push({...doc.data(), tags: tagsArray});
         });
 
         return listImage;

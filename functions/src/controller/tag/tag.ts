@@ -21,7 +21,7 @@ class Tag implements Controller {
 
         try {
             // @ts-ignore
-            const tags = await TagDAO.addTag(tagsDTO);
+            const tags = await TagDAO.updateTag(tagsDTO);
 
             response.status(200).send(JSON.stringify({
                 status: true,

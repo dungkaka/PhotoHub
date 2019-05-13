@@ -14,12 +14,27 @@ class ImageQuery implements Controller {
     }
 
     private initializeRoutes() {
-
         // @ts-ignore
-        this.router.post(`${this.path}/images`, authMiddleware, this.imageQueryByTag);
+        this.router.post(`${this.path}/images`, authMiddleware, this.addImage);
+        // @ts-ignore
+        this.router.post(`${this.path}/images/search`, authMiddleware, this.imageQueryByTag);
         // @ts-ignore
         this.router.get(`${this.path}/images`, authMiddleware, this.imageQuery);
 
+    }
+
+    private addImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+        try {
+            const imageDTO = request.body;
+            const image = await ImageDAO.addImage(imageDTO);
+            response.status(200).send(JSON.stringify({
+                status: true,
+                image: image,
+            }, null, `\t`))
+
+        } catch (error) {
+            next(error);
+        }
     }
 
     private imageQuery = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
