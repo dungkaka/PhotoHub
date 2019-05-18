@@ -10,7 +10,7 @@ class Tag implements Controller {
 
     constructor() {
         // @ts-ignore
-        this.router.get(`${this.path}/tags`, authMiddleware, this.getTags);
+        this.router.get(`${this.path}/tags`, this.getTags);
 
         // @ts-ignore
         this.router.post(`${this.path}/tags`, authMiddleware, this.addTag);

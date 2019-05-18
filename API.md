@@ -20,9 +20,19 @@
     
     + Get all images:
          *GET   api/images*
+         + With pagination:
+         
+            *GET   api/images/first*
+         
+            *GET   api/images/after*
     
     + Get images by tag:
          *POST   api/images/search*
+         + With pagination:
+                  
+             *GET   api/images/search/first*
+                  
+             *GET   api/images/search/after*
 
     + Get collections (USER):
          *GET   api/collections*
@@ -131,7 +141,6 @@
     + **Get Tags**
     
             - GET  api/tags
-            - Header: Authorization: Bearer TOKEN
             - Request payload: None
                 - Response:
                 + OK:
@@ -179,6 +188,15 @@
                             "message": "string"
                         }
                         ```
+                        
+    + **Get All Image With Pagination**
+    
+         - The same method with GET ALL IMAGE
+         - Only different on end-point:
+          
+             *GET  api/images/first* for first loading.
+             
+             *GET  api/images/after* for each after loading.
                        
     + **Get Image By Tag**
 
@@ -227,4 +245,12 @@
                         "message": "string"
                     }
                     ```
-        
+
+    + **Get Image By Tag With Pagination**
+    
+         - The same method with GET IMAGE BY TAG
+         - Only different on end-point:
+          
+             *POST  api/images/search/first* for first loading.
+             
+             *POST  api/images/search/after* for each after loading, and this end-point don't need to have request paylod.   

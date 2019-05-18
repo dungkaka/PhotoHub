@@ -105,7 +105,7 @@ class AuthenticationController implements Controller {
     }
 
     public createToken(user: UserModel): TokenData {
-        const expiresIn = 60*60;
+        const expiresIn = 60*60*24;
         const secret = keyJWT;
         const dataStoreInToken: DataStoredInToken = {
             username: user.username,
