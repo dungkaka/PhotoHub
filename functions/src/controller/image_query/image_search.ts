@@ -28,8 +28,25 @@ class ImageQuery implements Controller {
         this.router.post(`${this.path}/images/search/first`, authMiddleware, this.getImageByTagPaginationFirst);
         // @ts-ignore
         this.router.post(`${this.path}/images/search/after`, authMiddleware, this.getImageByTagPaginationAfter);
+        // @ts-ignore
+        this.router.post(`${this.path}/images/pagination`, authMiddleware, this.getPaginationImage);
+        // @ts-ignore
+        this.router.post(`${this.path}/images/search/pagination`, authMiddleware, this.getPaginationImageByTag);
 
     }
+
+
+    private getPaginationImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+        try {
+            const image_id = request.query.after;
+            const imageList = await ImageDAO.getPaginationImage(image_id);
+            response.send(JSON.stringify({
+                imageList,
+            }, null, "\t"))
+        } catch (error) {
+            next(error)
+        }
+    };
 
     private addImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
         try {
@@ -84,6 +101,23 @@ class ImageQuery implements Controller {
         try {
             if (imageSearchDTO.tags) {
                 const imageList = await ImageDAO.findImageByTag(imageSearchDTO.tags);
+                response.send(JSON.stringify(imageList, null, "\t"));
+            } else {
+                throw new HttpException(400, "Invalid message");
+            }
+
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    private getPaginationImageByTag = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+        const imageSearchDTO: ImageSearchDTO = request.body;
+        const image_id = request.query.after;
+
+        try {
+            if (imageSearchDTO.tags) {
+                const imageList = await ImageDAO.getPaginationImageByTag(imageSearchDTO.tags, image_id);
                 response.send(JSON.stringify(imageList, null, "\t"));
             } else {
                 throw new HttpException(400, "Invalid message");
