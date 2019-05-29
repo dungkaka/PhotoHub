@@ -172,25 +172,25 @@
       - Header: Authorization: Bearer TOKEN
       - Request payload: None
           - Response:
-          + OK:
-              - Status Code: 200
-              - Payload:
-                  ```
-                  {
-                      list of image
-                  }
-                  ```
-
-          + Bad request (Invalid Message, ...):
-              - Status Code: 400
-              - Payload:
-                  ```
-                  {
-                      "status": false,
-                      "code": int,
-                      "message": "string"
-                  }
-                  ```
+              + OK:
+                  - Status Code: 200
+                  - Payload:
+                      ```
+                      {
+                          list of image
+                      }
+                      ```
+        
+              + Bad request (Invalid Message, ...):
+                  - Status Code: 400
+                  - Payload:
+                      ```
+                      {
+                          "status": false,
+                          "code": int,
+                          "message": "string"
+                      }
+                      ```
 
 
   - **Get Image Pagination**
@@ -303,5 +303,26 @@
       You can test 2 examples above for same result
 
       ```
+    - Responses:
 
+      - OK:
+
+        - Status Code: 200
+        - Payload:
+          ```
+          {
+              images_detail
+          }
+          ```
+
+      - Bad request (Invalid Message, ...):
+        - Status Code: 400
+        - Payload:
+          ```
+          {
+              "status": false,
+              "code": int,
+              "message": "string"
+          }
+          ```
 
