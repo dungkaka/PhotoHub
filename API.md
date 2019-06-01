@@ -196,7 +196,6 @@
   - **Get Image Pagination**
     
     - GET api/images/pagination
-    - Header: Authorization: Bearer TOKEN
     - Params:
         + after=<:image_id> with image_id is the id of the image which client want to get list of image after.
           Example: api/images/pagination?after=sfKAikek2312
@@ -276,7 +275,6 @@
   - **Get Image By Tag With Pagination**
     
     - POST api/images/search/pagination
-    - Header: Authorization: Bearer TOKEN
     - Params:
         + after=<:image_id> with image_id is the id of the image which client want to get list of image after.
           Example: api/images/pagination?after=sfKAikek2312  

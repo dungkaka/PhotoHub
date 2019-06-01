@@ -20,15 +20,20 @@ class ImageDAO {
                 .doc(imageId)
                 .get();
 
-            imageDataQuerySnapshot = await ImageDAO.imagesRef.startAfter(preImage).limit(5).get();
+            imageDataQuerySnapshot = await ImageDAO.imagesRef.startAfter(preImage).limit(40).get();
 
         } else {
-            imageDataQuerySnapshot = await ImageDAO.imagesRef.limit(5).get();
+            imageDataQuerySnapshot = await ImageDAO.imagesRef.limit(40).get();
         }
 
         const listImage: any[] = [];
         imageDataQuerySnapshot.forEach((doc) => {
-            listImage.push({...doc.data(), image_id: doc.id});
+            const tagsModel = doc.data().tags;
+            const tagsArray = [];
+            for (const field in tagsModel) {
+                tagsArray.push(field);
+            }
+            listImage.push({...doc.data(), id: doc.id, tags: tagsArray});
         });
 
         return listImage;
@@ -46,7 +51,12 @@ class ImageDAO {
 
         const listImage: any[] = [];
         userDataQuerySnapshot.forEach((doc) => {
-            listImage.push({...doc.data(), image_id: doc.id});
+            const tagsModel = doc.data().tags;
+            const tagsArray = [];
+            for (const field in tagsModel) {
+                tagsArray.push(field);
+            }
+            listImage.push({...doc.data(), id: doc.id, tags: tagsArray});
         });
 
         return listImage;
@@ -91,14 +101,14 @@ class ImageDAO {
     // };
 
     public static findImageByTag = async (tags: any[]) => {
-        let userDataQuery: Query = ImageDAO.imagesRef;
+        let imageDataQuery: Query = ImageDAO.imagesRef;
         tags.forEach(tag => {
             if (tag !== false && tag !== "") {
-                userDataQuery = userDataQuery.where(`tags.${tag}`, "==", true);
+                imageDataQuery = imageDataQuery.where(`tags.${tag}`, "==", true);
             }
         });
 
-        const imageList = await userDataQuery.get();
+        const imageList = await imageDataQuery.get();
 
         const listImage: any[] = [];
         imageList.forEach((doc) => {
@@ -107,7 +117,7 @@ class ImageDAO {
             for (const field in tagsModel) {
                 tagsArray.push(field);
             }
-            listImage.push({...doc.data(), tags: tagsArray, image_id: doc.id});
+            listImage.push({...doc.data(), tags: tagsArray, id: doc.id});
         });
 
         return listImage;
@@ -130,9 +140,9 @@ class ImageDAO {
                 .doc(imageId)
                 .get();
 
-            imageList = await imageDataQuery.startAfter(preImage).limit(5).get();
+            imageList = await imageDataQuery.startAfter(preImage).limit(40).get();
         } else {
-            imageList = await imageDataQuery.limit(5).get();
+            imageList = await imageDataQuery.limit(40).get();
         }
 
         const listImage: any[] = [];
@@ -142,7 +152,7 @@ class ImageDAO {
             for (const field in tagsModel) {
                 tagsArray.push(field);
             }
-            listImage.push({...doc.data(), tags: tagsArray});
+            listImage.push({...doc.data(), tags: tagsArray, id: doc.id});
         });
 
         return listImage;

@@ -29,19 +29,18 @@ class ImageQuery implements Controller {
         // // @ts-ignore
         // this.router.post(`${this.path}/images/search/after`, authMiddleware, this.getImageByTagPaginationAfter);
         // @ts-ignore
-        this.router.get(`${this.path}/images/pagination`, authMiddleware, this.getPaginationImage);
+        this.router.get(`${this.path}/images/pagination`, this.getPaginationImage);
         // @ts-ignore
-        this.router.post(`${this.path}/images/search/pagination`, authMiddleware, this.getPaginationImageByTag);
-
+        this.router.post(`${this.path}/images/search/pagination`, this.getPaginationImageByTag);
     }
 
 
     private getPaginationImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
         try {
             const image_id = request.query.after;
-            const imageList = await ImageDAO.getPaginationImage(image_id);
+            const images = await ImageDAO.getPaginationImage(image_id);
             response.send(JSON.stringify({
-                imageList,
+                images,
             }, null, "\t"))
         } catch (error) {
             next(error)
@@ -64,9 +63,9 @@ class ImageQuery implements Controller {
 
     private imageQuery = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
         try {
-            const imageList = await ImageDAO.getAllImage();
+            const images = await ImageDAO.getAllImage();
             response.send(JSON.stringify({
-                imageList,
+                images,
             }, null, "\t"))
         } catch (error) {
             next(error)
@@ -100,8 +99,8 @@ class ImageQuery implements Controller {
 
         try {
             if (imageSearchDTO.tags) {
-                const imageList = await ImageDAO.findImageByTag(imageSearchDTO.tags);
-                response.send(JSON.stringify(imageList, null, "\t"));
+                const images = await ImageDAO.findImageByTag(imageSearchDTO.tags);
+                response.send(JSON.stringify(images, null, "\t"));
             } else {
                 throw new HttpException(400, "Invalid message");
             }
@@ -117,8 +116,8 @@ class ImageQuery implements Controller {
 
         try {
             if (imageSearchDTO.tags) {
-                const imageList = await ImageDAO.getPaginationImageByTag(imageSearchDTO.tags, image_id);
-                response.send(JSON.stringify(imageList, null, "\t"));
+                const images = await ImageDAO.getPaginationImageByTag(imageSearchDTO.tags, image_id);
+                response.send(JSON.stringify(images, null, "\t"));
             } else {
                 throw new HttpException(400, "Invalid message");
             }
