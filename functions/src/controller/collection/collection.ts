@@ -17,7 +17,9 @@ class Collection implements Controller {
         // @ts-ignore
         this.router.get(`${this.path}/collections`, authMiddleware, this.getAllCollection);
         // @ts-ignore
-        this.router.post(`${this.path}/collections`, authMiddleware, this.createCollection);
+        this.router.post(`${this.path}/collections/create`, authMiddleware, this.createCollection);
+        // @ts-ignore
+        this.router.post(`${this.path}/collections/:collectionId/add-image`, authMiddleware, this.addImageToCollection);
     }
 
     private getAllCollection = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
@@ -47,8 +49,7 @@ class Collection implements Controller {
         try {
             // @ts-ignore
             const collectionDAO = new CollectionDAO(user.user_id);
-            const collection = await collectionDAO.createNewCollection(collectionCreateDTO);
-
+            const collection = await collectionDAO.createNewCollection(collectionDAO.convertToCollectionModel(collectionCreateDTO));
 
             response.status(200).send(JSON.stringify({
                 status: true,
@@ -68,10 +69,29 @@ class Collection implements Controller {
     //
     // }
 
-    // private addImageToCollection = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-    //
-    // }
-    //
+    private addImageToCollection = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+        const collectionId = request.params.collectionId;
+        const image = request.body;
+        const user = request.user;
+
+        try {
+            // @ts-ignore
+            const collectionDAO = new CollectionDAO(user.user_id);
+            const addImage = await collectionDAO.addImageToCollection(image.image_id, collectionId);
+
+            response.status(200).send(JSON.stringify({
+                status: true,
+                message: addImage.message,
+            }, null, '\t'));
+        } catch (error) {
+            response.send({
+                status: false,
+                code: error.status,
+                message: error.message,
+            })
+        }
+    }
+
     // private deletedImageFromCollection = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     //
     // }

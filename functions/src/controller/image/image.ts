@@ -110,7 +110,10 @@ class ImageQuery implements Controller {
             if (image_id) {
                 // @ts-ignore
                 const updateImage = await ImageDAO.likeImage(user.user_id, image_id);
-                response.send(JSON.stringify(updateImage, null, "\t"));
+                response.send(JSON.stringify( {
+                    status: true,
+                    message: updateImage.message,
+                }, null, "\t"));
             } else {
                 throw new HttpException(400, "Invalid message");
             }
@@ -129,7 +132,10 @@ class ImageQuery implements Controller {
             if (image_id) {
                 // @ts-ignore
                 const updateImage = await ImageDAO.unLikeImage(user.user_id, image_id);
-                response.send(JSON.stringify(updateImage, null, "\t"));
+                response.send(JSON.stringify({
+                    status: true,
+                    message: updateImage.message,
+                }, null, "\t"));
             } else {
                 throw new HttpException(400, "Invalid message");
             }

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image/imageSearch.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image/image.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/controller/image/image.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image/image.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,17 +44,17 @@
         <counts>
           <entry key="js" value="204" />
           <entry key="json" value="18" />
-          <entry key="md" value="2287" />
-          <entry key="ts" value="33863" />
+          <entry key="md" value="2871" />
+          <entry key="ts" value="35585" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="18" />
           <entry key="JavaScript" value="204" />
-          <entry key="Markdown" value="1808" />
+          <entry key="Markdown" value="2392" />
           <entry key="PLAIN_TEXT" value="479" />
-          <entry key="TypeScript" value="33863" />
+          <entry key="TypeScript" value="35585" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,7 +66,7 @@
           <entry key="json" value="24" />
           <entry key="log" value="1" />
           <entry key="md" value="8" />
-          <entry key="ts" value="368" />
+          <entry key="ts" value="373" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -76,7 +75,7 @@
           <entry key="JavaScript" value="57" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="TypeScript" value="368" />
+          <entry key="TypeScript" value="373" />
           <entry key="UML" value="2" />
           <entry key="tsconfig" value="1" />
         </counts>
@@ -88,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/src/controller/image/image.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1352">
-              <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
+            <state relative-caret-position="326">
+              <caret line="138" column="20" lean-forward="true" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -98,13 +97,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
+        <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collectionCreate.dto.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -113,10 +109,28 @@
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="163">
-                <caret line="368" column="25" lean-forward="true" selection-start-line="368" selection-start-column="25" selection-end-line="368" selection-end-column="25" />
+              <first_editor relative-caret-position="297">
+                <caret line="353" column="32" lean-forward="true" selection-start-line="353" selection-start-column="32" selection-end-line="353" selection-end-column="32" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.model.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -135,42 +149,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="19" selection-start-column="18" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/config/firebase.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/middleware/error.middleware.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -232,8 +210,6 @@
         <option value="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/user/user.model.ts" />
         <option value="$PROJECT_DIR$/functions/src/interfaces/requestUser.interface.ts" />
-        <option value="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" />
-        <option value="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" />
         <option value="$PROJECT_DIR$/functions/src/middleware/validate-input.middleware.ts" />
         <option value="$PROJECT_DIR$/functions/src/middleware/auth.middleware.ts" />
         <option value="$PROJECT_DIR$/functions/src/middleware/validate.middleware.ts" />
@@ -243,15 +219,17 @@
         <option value="$PROJECT_DIR$/functions/src/controller/tags/tags.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/tags/tag.ts" />
         <option value="$PROJECT_DIR$/functions/src/server.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/tag/tag.dao.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/image_query/imageSearch.dto.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/tag/tag.ts" />
         <option value="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" />
         <option value="$PROJECT_DIR$/functions/lib/controller/image_query/image_search.js" />
         <option value="$PROJECT_DIR$/functions/src/controller/image_query/image_search.ts" />
-        <option value="$PROJECT_DIR$/functions/src/controller/image/image.ts" />
         <option value="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" />
+        <option value="$PROJECT_DIR$/functions/src/model/collection/collection.model.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" />
+        <option value="$PROJECT_DIR$/functions/src/controller/image/image.ts" />
+        <option value="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" />
         <option value="$PROJECT_DIR$/API.md" />
       </list>
     </option>
@@ -271,10 +249,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
-    <option name="y" value="10" />
+    <option name="x" value="33" />
+    <option name="y" value="5" />
     <option name="width" value="1827" />
-    <option name="height" value="1007" />
+    <option name="height" value="962" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -315,6 +293,14 @@
               <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="collection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhotoHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhotoHub" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -337,7 +323,7 @@
               <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="collection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhotoHub" type="b2602c69:ProjectViewProjectNode" />
@@ -345,7 +331,7 @@
               <item name="functions" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="tag" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhotoHub" type="b2602c69:ProjectViewProjectNode" />
@@ -431,18 +417,18 @@
       <workItem from="1559357362793" duration="3032000" />
       <workItem from="1560501736428" duration="2284000" />
       <workItem from="1560568917861" duration="4337000" />
-      <workItem from="1561027579717" duration="8168000" />
+      <workItem from="1561027579717" duration="14372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275393000" />
+    <option name="totallyTimeSpent" value="281597000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="8" width="1461" height="805" extended-state="0" />
+    <frame x="27" y="4" width="1461" height="769" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24016854" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -455,7 +441,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32907802" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23214285" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24528302" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -503,13 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collectionCreate.dto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -1177,13 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/node_modules/typescript/lib/lib.es2015.iterable.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -1210,13 +1182,6 @@
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>Overview</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -1260,13 +1225,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/firebase.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/controller/authenication/logIn.dto.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1359,10 +1317,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dao.ts">
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/image/imageSearch.dto.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1373,38 +1338,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/image/imageSearch.dto.ts">
+    <entry file="file://$PROJECT_DIR$/functions/src/model/user/user.dao.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/controller/image/image.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="663">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+        <state relative-caret-position="-1904">
+          <caret line="5" column="65" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="65" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collectionCreate.dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/image/image.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="138" column="20" lean-forward="true" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="938">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/API.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="163">
-            <caret line="368" column="25" lean-forward="true" selection-start-line="368" selection-start-column="25" selection-end-line="368" selection-end-column="25" />
+          <first_editor relative-caret-position="297">
+            <caret line="353" column="32" lean-forward="true" selection-start-line="353" selection-start-column="32" selection-end-line="353" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>

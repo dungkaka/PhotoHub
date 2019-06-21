@@ -36,14 +36,17 @@
   - Unlike image:
     _DELETE api/images/<:image_id>/likes_
     
-  - Get collections (USER):
+  - Create collection:
+    _POST api/collections/creates_  
+  
+  - Add Image to Collection:
+    _POST api/collections/<:collectionId>/add-image_
+  
+  - Get collections of a user:
     _GET api/collections_
 
   - Get collection by id:
     _GET api/collections/<:collection_id>_
-
-  - Create collection:
-    _POST api/collections/<:collection_id>_
 
   - Update collection:
     _PUT api/collections/<:collection_id>_
@@ -332,13 +335,139 @@
     - Header: Authorization: Bearer TOKEN
     - Param: <:image_id>, that is id of image which user want to like.
     - Request payload: None
+    - Response:
+        + OK:
+            - Status Code: 200
+            - Payload:
+                ```
+                {
+                    message: "Completed like image !"
+                }
+                ```
+  
+        + Bad request (Invalid Message, ...):
+            - Status Code: 400
+            - Payload:
+                ```
+                {
+                    "status": false,
+                    "code": int,
+                    "message": "string"
+                }
+                    ```
+  - **Unlike image**
+  
+      - DELETE api/images/<:image_id>/likes
+      - Header: Authorization: Bearer TOKEN
+      - Param: <:image_id>, that is id of image which user want to like.
+      - Request payload: None
+      - Response:
+          + OK:
+              - Status Code: 200
+              - Payload:
+                  ```
+                  {
+                      message: "Completed unlike image !"
+                  }
+                  ```
+    
+          + Bad request (Invalid Message, ...):
+              - Status Code: 400
+              - Payload:
+                  ```
+                  {
+                      "status": false,
+                      "code": int,
+                      "message": "string"
+                  }
+                  ```
+  
+  - **Create Collection**
+    
+    - POST api/collections/creates
+    - Header: Authorization: Bearer TOKEN
+    - Request payload:
+        ```
+            {
+                name: string,
+            }
+            
+            where field name is name of Collection.
+        ```
+    - Response:
+        + OK:
+            - Status Code: 200
+            - Payload:
+                ```
+                {
+                    status: true,
+                    collection: {
+                        collection_field,
+                    }
+                }
+                ```
+  
+        + Bad request (Invalid Message, ...):
+            - Status Code: 400
+            - Payload:
+                ```
+                {
+                    "status": false,
+                    "code": int,
+                    "message": "string"
+                }
+                ```
+                
+  - **Add Image to Collection**
+      
+      - POST api/collections/<:collectionId>/add-image
+      - Header: Authorization: Bearer TOKEN
+      - Param: <:collectionId> , where collectionId is id of collection which added image !
+      - Request payload:
+          ```
+              {
+                  image_id: string,
+              }
+              
+              where field image_id is id of image which collection added.
+          ```
+      - Response:
+          + OK:
+              - Status Code: 200
+              - Payload:
+                  ```
+                  {
+                      status: true,
+                      message: "Add image to collection {Collection Name} successfully !"
+                  }
+                  ```
+    
+          + Bad request (Invalid Message, ...):
+              - Status Code: 400
+              - Payload:
+                  ```
+                  {
+                      "status": false,
+                      "code": int,
+                      "message": "string"
+                  }
+                  ```
+  
+  - **Get collection of a user**
+        
+        - GET api/collections
+        - Header: Authorization: Bearer TOKEN
+        - Request payload: None
         - Response:
             + OK:
                 - Status Code: 200
                 - Payload:
                     ```
                     {
-                        message: "Completed like image !"
+                        "status": true,
+                        "collections": [
+                            list of collections
+                        ]
                     }
                     ```
       
@@ -351,30 +480,5 @@
                         "code": int,
                         "message": "string"
                     }
-                    ```
-  - **Unlike image**
+                    ```                
   
-      - DELETE api/images/<:image_id>/likes
-      - Header: Authorization: Bearer TOKEN
-      - Param: <:image_id>, that is id of image which user want to like.
-      - Request payload: None
-          - Response:
-              + OK:
-                  - Status Code: 200
-                  - Payload:
-                      ```
-                      {
-                          message: "Completed unlike image !"
-                      }
-                      ```
-        
-              + Bad request (Invalid Message, ...):
-                  - Status Code: 400
-                  - Payload:
-                      ```
-                      {
-                          "status": false,
-                          "code": int,
-                          "message": "string"
-                      }
-                      ```
