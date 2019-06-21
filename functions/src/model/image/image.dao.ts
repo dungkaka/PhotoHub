@@ -1,13 +1,9 @@
 import {firestoreRef} from "../../config/firebase";
 import {Query, QuerySnapshot} from "@google-cloud/firestore";
+import HttpException from "../../exception/HttpException";
 
 class ImageDAO {
     private static imagesRef = firestoreRef.collection("images");
-    // private static imagePagination = ImageDAO.imagesRef;
-    // private static imageEndOfQuery: DocumentSnapshot;
-    // private static imageByTagPagination: Query;
-    // private static imageByTagEndOfQuery: DocumentSnapshot;
-
 
     public static getPaginationImage = async (imageId: string) => {
 
@@ -39,7 +35,6 @@ class ImageDAO {
         return listImage;
     }
 
-
     public static addImage = async (images: any) => {
         const imageRef = await ImageDAO.imagesRef.add(images);
         const image = await imageRef.get();
@@ -62,45 +57,7 @@ class ImageDAO {
         return listImage;
     }
 
-    // public static getPaginationImageFirst = async () => {
-    //     const imageDataQuerySnapshot
-    //         = await ImageDAO
-    //         .imagePagination
-    //         .get();
-    //
-    //     ImageDAO.imageEndOfQuery = imageDataQuerySnapshot.docs[imageDataQuerySnapshot.docs.length - 1];
-    //     const last = ImageDAO.imageEndOfQuery;
-    //
-    //     const listImage: any[] = [];
-    //     imageDataQuerySnapshot.forEach((doc) => {
-    //         listImage.push({...doc.data(), image_id: doc.id});
-    //     });
-    //
-    //     console.log(ImageDAO.imageEndOfQuery);
-    //
-    //     return {
-    //         listImage,
-    //         last
-    //     };
-    // };
-    //
-    // public static getPaginationImageAfter = async () => {
-    //     if (ImageDAO.imageEndOfQuery) {
-    //         const imageDataQuerySnapshot = await ImageDAO.imagePagination.startAfter(ImageDAO.imageEndOfQuery).get();
-    //         ImageDAO.imageEndOfQuery = imageDataQuerySnapshot.docs[imageDataQuerySnapshot.docs.length - 1];
-    //
-    //         const listImage: any[] = [];
-    //         imageDataQuerySnapshot.forEach((doc) => {
-    //             listImage.push({...doc.data(), image_id: doc.id});
-    //         });
-    //
-    //         return listImage;
-    //     }
-    //
-    //     return [];
-    // };
-
-    public static findImageByTag = async (tags: any[]) => {
+    public static getImageByTag = async (tags: any[]) => {
         let imageDataQuery: Query = ImageDAO.imagesRef;
         tags.forEach(tag => {
             if (tag !== false && tag !== "") {
@@ -158,52 +115,71 @@ class ImageDAO {
         return listImage;
     }
 
-    // public static getImageByTagPaginationFirst = async (tags: any[]) => {
-    //     let imageDataQuery: Query = ImageDAO.imagesRef;
-    //     tags.forEach(tag => {
-    //         if (tag !== false && tag !== "") {
-    //             imageDataQuery = imageDataQuery.where(`tags.${tag}`, "==", true);
-    //         }
-    //     });
-    //
-    //     ImageDAO.imageByTagPagination = imageDataQuery.limit(2);
-    //     const imageList = await ImageDAO.imageByTagPagination.get();
-    //     ImageDAO.imageByTagEndOfQuery = imageList.docs[imageList.docs.length - 1];
-    //
-    //     const listImage: any[] = [];
-    //     imageList.forEach((doc) => {
-    //         const tagsModel = doc.data().tags;
-    //         const tagsArray = [];
-    //         for (const field in tagsModel) {
-    //             tagsArray.push(field);
-    //         }
-    //         listImage.push({...doc.data(), tags: tagsArray});
-    //     });
-    //
-    //     return listImage;
-    // }
-    //
-    // public static getImageByTagPaginationAfter = async () => {
-    //     if (ImageDAO.imageByTagEndOfQuery) {
-    //         const imageList = await ImageDAO.imageByTagPagination.startAfter(ImageDAO.imageByTagEndOfQuery).get();
-    //         ImageDAO.imageByTagEndOfQuery = imageList.docs[imageList.docs.length - 1];
-    //
-    //         const listImage: any[] = [];
-    //         imageList.forEach((doc) => {
-    //             const tagsModel = doc.data().tags;
-    //             const tagsArray = [];
-    //             for (const field in tagsModel) {
-    //                 tagsArray.push(field);
-    //             }
-    //             listImage.push({...doc.data(), tags: tagsArray});
-    //         });
-    //
-    //         return listImage;
-    //     }
-    //
-    //     return [];
-    //
-    // }
+    public static likeImage = async (userId: string, imageId: any) => {
+        const imageRef = ImageDAO.imagesRef.doc(imageId);
+        const image = await imageRef.get();
+
+        if(image) {
+            // @ts-ignore
+            let like_by = image.data().like_by;
+            // @ts-ignore
+            let likes = image.data().likes;
+
+            if (!like_by.includes(userId)) {
+                like_by.push(userId);
+                likes += 1;
+
+                await imageRef.set({
+                    // like_by: admin.firestore.FieldValue.arrayUnion("user_2"),
+                    // likes: admin.firestore.FieldValue.increment(1),
+                    like_by,
+                    likes,
+                }, {merge: true});
+
+                return {
+                    message: "Completed like image !"
+                };
+            } else {
+                throw new HttpException(400, "User already like this image");
+            }
+        } else {
+            throw new HttpException(400, "Image can not found");
+        }
+    }
+
+    public static unLikeImage = async (userId: string, imageId: any) => {
+        const imageRef = ImageDAO.imagesRef.doc(imageId);
+        const image = await imageRef.get();
+
+        if(image) {
+            // @ts-ignore
+            let like_by = image.data().like_by;
+            // @ts-ignore
+            let likes = image.data().likes;
+
+            if (like_by.includes(userId)) {
+                like_by = like_by.filter((item: any) => {
+                    return item !== userId;
+                });
+                likes -= 1;
+
+                await imageRef.set({
+                    // like_by: admin.firestore.FieldValue.arrayUnion("user_2"),
+                    // likes: admin.firestore.FieldValue.increment(1),
+                    like_by,
+                    likes,
+                }, {merge: true});
+
+                return {
+                    message: "Completed unlike image !"
+                };
+            } else {
+                throw new HttpException(400, "User have not like this image yet");
+            }
+        } else {
+            throw new HttpException(400, "Image can not found");
+        }
+    }
 
 
 }

@@ -30,20 +30,24 @@
   - Get images by tag with pagination:
     _POST api/images/search/pagination_
        
+  - Like image:
+    _POST api/images/<:image_id>/likes_
+    
+  - Unlike image:
+    _DELETE api/images/<:image_id>/likes_
+    
   - Get collections (USER):
     _GET api/collections_
 
   - Get collection by id:
-    _GET api/collections/<collection_id>_
+    _GET api/collections/<:collection_id>_
 
   - Create collection:
-    _POST api/collections/<collection_id>_
+    _POST api/collections/<:collection_id>_
 
   - Update collection:
-    _PUT api/collections/<collection_id>_
+    _PUT api/collections/<:collection_id>_
 
-  - Like image:
-    _PUT api/images/<image_id>_
 
 - Content-Type: application/json
 
@@ -192,11 +196,10 @@
                       }
                       ```
 
-
   - **Get Image Pagination**
     
     - GET api/images/pagination
-    - Params:
+    - Query Params:
         + after=<:image_id> with image_id is the id of the image which client want to get list of image after.
           Example: api/images/pagination?after=sfKAikek2312
       - Request payload: None
@@ -275,7 +278,7 @@
   - **Get Image By Tag With Pagination**
     
     - POST api/images/search/pagination
-    - Params:
+    - Query Params:
         + after=<:image_id> with image_id is the id of the image which client want to get list of image after.
           Example: api/images/pagination?after=sfKAikek2312  
     - Request payload:
@@ -323,4 +326,55 @@
               "message": "string"
           }
           ```
+  - **Like image**
 
+    - POST api/images/<:image_id>/likes
+    - Header: Authorization: Bearer TOKEN
+    - Param: <:image_id>, that is id of image which user want to like.
+    - Request payload: None
+        - Response:
+            + OK:
+                - Status Code: 200
+                - Payload:
+                    ```
+                    {
+                        message: "Completed like image !"
+                    }
+                    ```
+      
+            + Bad request (Invalid Message, ...):
+                - Status Code: 400
+                - Payload:
+                    ```
+                    {
+                        "status": false,
+                        "code": int,
+                        "message": "string"
+                    }
+                    ```
+  - **Unlike image**
+  
+      - DELETE api/images/<:image_id>/likes
+      - Header: Authorization: Bearer TOKEN
+      - Param: <:image_id>, that is id of image which user want to like.
+      - Request payload: None
+          - Response:
+              + OK:
+                  - Status Code: 200
+                  - Payload:
+                      ```
+                      {
+                          message: "Completed unlike image !"
+                      }
+                      ```
+        
+              + Bad request (Invalid Message, ...):
+                  - Status Code: 400
+                  - Payload:
+                      ```
+                      {
+                          "status": false,
+                          "code": int,
+                          "message": "string"
+                      }
+                      ```
