@@ -492,10 +492,10 @@
                    ```
   - **Get collection of a user**
         
-        - GET api/collections
-        - Header: Authorization: Bearer TOKEN
-        - Request payload: None
-        - Response:
+       - GET api/collections
+       - Header: Authorization: Bearer TOKEN
+       - Request payload: None
+       - Response:
             + OK:
                 - Status Code: 200
                 - Payload:
@@ -507,7 +507,7 @@
                         ]
                     }
                     ```
-      
+        
             + Bad request (Invalid Message, ...):
                 - Status Code: 400
                 - Payload:
@@ -520,30 +520,30 @@
                     ```                
   - **Get collection by Id**
           
-          - GET api/collections/<:collection_id>
-          - Header: Authorization: Bearer TOKEN
-          - Param: <:collectionId> , where collectionId is id of collection.
-          - Request payload: None
-          - Response:
-              + OK:
-                  - Status Code: 200
-                  - Payload:
-                      ```
-                      {
-                          "status": true,
-                          "collection": {
-                            detail of collection
-                          }
+      - GET api/collections/<:collection_id>
+      - Header: Authorization: Bearer TOKEN
+      - Param: <:collectionId> , where collectionId is id of collection.
+      - Request payload: None
+      - Response:
+          + OK:
+              - Status Code: 200
+              - Payload:
+                  ```
+                  {
+                      "status": true,
+                      "collection": {
+                        detail of collection
                       }
-                      ```
-        
-              + Bad request (Invalid Message, ...):
-                  - Status Code: 400
-                  - Payload:
-                      ```
-                      {
-                          "status": false,
-                          "code": int,
-                          "message": "string"
-                      }
-                      ```     
+                  }
+                  ```
+    
+          + Bad request (Invalid Message, ...):
+              - Status Code: 400
+              - Payload:
+                  ```
+                  {
+                      "status": false,
+                      "code": int,
+                      "message": "string"
+                  }
+                  ```     

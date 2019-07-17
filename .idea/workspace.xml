@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/src/controller/account/initDefault.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/config/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/config/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/authenication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/account/authenication.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/logIn.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/account/logIn.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/authenication/signUp.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/account/signUp.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/collection/collection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/controller/image/image.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/controller/image/image.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/collection/collection.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/image/image.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/model/user/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/services/authenication/authenication.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -66,8 +48,8 @@
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="313">
-                <caret line="527" column="19" lean-forward="true" selection-start-line="527" selection-start-column="19" selection-end-line="527" selection-end-column="19" />
+              <first_editor relative-caret-position="68">
+                <caret line="460" selection-start-line="460" selection-end-line="491" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -358,12 +340,12 @@
       <workItem from="1561804173043" duration="3650000" />
       <workItem from="1561977130452" duration="2921000" />
       <workItem from="1562910226545" duration="10270000" />
-      <workItem from="1563377915789" duration="3680000" />
+      <workItem from="1563377915789" duration="3985000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306875000" />
+    <option name="totallyTimeSpent" value="307180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1301,8 +1283,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="313">
-            <caret line="527" column="19" lean-forward="true" selection-start-line="527" selection-start-column="19" selection-end-line="527" selection-end-column="19" />
+          <first_editor relative-caret-position="68">
+            <caret line="460" selection-start-line="460" selection-end-line="491" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
