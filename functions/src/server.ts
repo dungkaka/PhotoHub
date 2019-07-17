@@ -1,5 +1,5 @@
 import App from './app';
-import AuthenticationController from "./controller/authenication/authenication";
+import AuthenticationController from "./controller/account/authenication";
 import "reflect-metadata";
 import ImageQuery from "./controller/image/image";
 import * as functions from "firebase-functions";

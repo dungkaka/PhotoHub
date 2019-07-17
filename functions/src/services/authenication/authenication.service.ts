@@ -1,8 +1,7 @@
 import * as bcrypt from 'bcrypt';
-import UserDTO from "../../model/user/user.dto";
 import UserDAO from "../../model/user/user.dao";
 import HttpException from "../../exception/HttpException";
-import SignUpDTO from "../../controller/authenication/signUp.dto";
+import SignUpDTO from "../../controller/account/signUp.dto";
 
 
 class AuthenicationService {
@@ -20,12 +19,9 @@ class AuthenicationService {
 
         if (userSignUp.password) {
             const hashedPassword = await bcrypt.hash(userSignUp.password, 10);
-            const userModel = await UserDAO.createUserToDatabase(userSignUp, hashedPassword);
-            if (userModel) {
+            const user = await UserDAO.createUserToDatabase(userSignUp, hashedPassword);
+            if (user) {
                 // @ts-ignore
-                const user: UserDTO = UserDAO.convertToUserDTO(userModel);
-                user.password = undefined;
-
                 return {
                     user,
                 };

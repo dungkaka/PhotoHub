@@ -5,6 +5,27 @@ import HttpException from "../../exception/HttpException";
 class ImageDAO {
     private static imagesRef = firestoreRef.collection("images");
 
+    public static updateSizeOfImage = async () => {
+        const probe = require('probe-image-size');
+        const list = [];
+
+        const imageQuertSnapshot = await ImageDAO.imagesRef.get();
+
+        for (let doc of imageQuertSnapshot.docs) {
+            const inforImage = await probe(doc.data().url);
+            console.log(inforImage);
+
+            const imageRef = ImageDAO.imagesRef.doc(doc.id);
+            await imageRef.update({
+                info: inforImage,
+            });
+
+            list.push(inforImage);
+        }
+        return list;
+
+    }
+
     public static getPaginationImage = async (imageId: string) => {
 
         let imageDataQuerySnapshot: QuerySnapshot;

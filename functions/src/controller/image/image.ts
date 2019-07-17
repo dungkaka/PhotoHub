@@ -4,6 +4,7 @@ import ImageDAO from "../../model/image/image.dao";
 import HttpException from "../../exception/HttpException";
 import authMiddleware from "../../middleware/auth.middleware";
 import RequestWithUser from "../../interfaces/requestUser.interface";
+import CollectionDAO from "../../model/collection/collection.dao";
 
 class ImageQuery implements Controller {
     public path = "";
@@ -27,8 +28,16 @@ class ImageQuery implements Controller {
         // @ts-ignore
         this.router.post(`${this.path}/images/:image_id/like`, authMiddleware, this.likeImage);
         // @ts-ignore
-        this.router.delete(`${this.path}/images/:image_id/like`, authMiddleware, this.unLikeImage)
+        this.router.delete(`${this.path}/images/:image_id/like`, authMiddleware, this.unLikeImage);
+        // @ts-ignore
+        this.router.get(`${this.path}/images/update_size`, this.updateSizeOfImage);
+
     }
+
+    private updateSizeOfImage = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+        const list = await ImageDAO.updateSizeOfImage();
+        response.send(JSON.stringify(list, null, "\t"));
+    };
 
 
     private getPaginationImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
@@ -109,7 +118,11 @@ class ImageQuery implements Controller {
         try {
             if (image_id) {
                 // @ts-ignore
-                const updateImage = await ImageDAO.likeImage(user.user_id, image_id);
+                const updateImage = await ImageDAO.likeImage(user.id, image_id);
+                const collectionDAO = new CollectionDAO(user.id);
+                const favouriteCollection = await collectionDAO.findFavouriteCollection();
+                await collectionDAO.addImageToCollection(image_id, favouriteCollection.id);
+
                 response.send(JSON.stringify( {
                     status: true,
                     message: updateImage.message,
@@ -131,7 +144,11 @@ class ImageQuery implements Controller {
         try {
             if (image_id) {
                 // @ts-ignore
-                const updateImage = await ImageDAO.unLikeImage(user.user_id, image_id);
+                const updateImage = await ImageDAO.unLikeImage(user.id, image_id);
+                const collectionDAO = new CollectionDAO(user.id);
+                const favouriteCollection = await collectionDAO.findFavouriteCollection();
+                await collectionDAO.deletedImageFromCollection(image_id, favouriteCollection.id);
+
                 response.send(JSON.stringify({
                     status: true,
                     message: updateImage.message,

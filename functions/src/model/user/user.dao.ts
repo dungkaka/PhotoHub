@@ -2,7 +2,7 @@
 import {firestoreRef} from "../../config/firebase";
 import UserDTO from "./user.dto";
 import UserModel from "./user.model";
-import SignUpDTO from "../../controller/authenication/signUp.dto";
+import SignUpDTO from "../../controller/account/signUp.dto";
 import HttpException from "../../exception/HttpException";
 
 class UserDAO {
@@ -11,7 +11,7 @@ class UserDAO {
     /*
     Convert from UserDTO to UserModel to communicate with Database
      */
-    public static convertToUserModel = (user: SignUpDTO): UserModel => {
+    public static convertToUserModel = (user: any): UserModel => {
         return {
             username: user.username,
             password: user.password,
@@ -26,7 +26,7 @@ class UserDAO {
     /*
     Convert from UserModel to UserDTO to communicate with Client
      */
-    public static convertToUserDTO = (user: UserModel): UserDTO => {
+    public static convertToUserDTO = (user: any): UserDTO => {
         return {
             username: user.username,
             password: user.password,
@@ -49,7 +49,7 @@ class UserDAO {
 
         const listUser: any[] = [];
         userDataQuerySnapshot.forEach((doc) => {
-            listUser.push({...doc.data(), user_id: doc.id});
+            listUser.push({...doc.data(), id: doc.id});
         });
 
         return listUser;
@@ -71,7 +71,7 @@ class UserDAO {
 
             const userData = await userModel.get();
 
-            return userData.data();
+            return {...userData.data(), id: userData.id};
         } catch {
             throw new HttpException(400, "Can not register for user with valid information !");
         }

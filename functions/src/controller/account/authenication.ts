@@ -14,7 +14,7 @@ import SignUpDTO from "./signUp.dto";
 import UserModel from "../../model/user/user.model";
 import validateInput from "../../middleware/validate-input.middleware";
 import validationHandler from "../../middleware/validation-handler";
-
+import InitDefault from "./initDefault";
 
 class AuthenticationController implements Controller {
     public path = '';
@@ -48,13 +48,19 @@ class AuthenticationController implements Controller {
             const userSignUp: SignUpDTO = request.body;
             const { user } = await this.authenicationService.register(userSignUp);
 
+            const userDTO: UserDTO = UserDAO.convertToUserDTO(user);
+            userDTO.password = undefined;
+
             // response.setHeader('Set-Cookie', cookie);
             response.cookie('token', "1234567859", {expires: new Date(Date.now() + 99999999)});
-            response.status(200).send(JSON.stringify({
+            await response.status(200).send(JSON.stringify({
                 status: true,
-                user: user,
+                user: userDTO,
 
             }, null, '\t'));
+
+            const initDefault = new InitDefault(user);
+            await initDefault.init();
 
         } catch (error) {
             response.status(400).send({

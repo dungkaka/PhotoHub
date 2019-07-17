@@ -41,6 +41,9 @@
   
   - Add Image to Collection:
     _POST api/collections/<:collectionId>/add-image_
+    
+  - Delete Image From Collection:
+    _DELETE api/collections/<:collectionId>/delete-image_
   
   - Get collections of a user:
     _GET api/collections_
@@ -452,7 +455,41 @@
                       "message": "string"
                   }
                   ```
-  
+                  
+  - **Delete Image From Collection**
+       
+       - DELETE api/collections/<:collectionId>/add-image
+       - Header: Authorization: Bearer TOKEN
+       - Param: <:collectionId> , where collectionId is id of collection which added image !
+       - Request payload:
+           ```
+               {
+                   image_id: string,
+               }
+               
+               where field image_id is id of image which collection added.
+           ```
+       - Response:
+           + OK:
+               - Status Code: 200
+               - Payload:
+                   ```
+                   {
+                       status: true,
+                       message: "Delete image from collection {Collection Name} successfully !"
+                   }
+                   ```
+     
+           + Bad request (Invalid Message, ...):
+               - Status Code: 400
+               - Payload:
+                   ```
+                   {
+                       "status": false,
+                       "code": int,
+                       "message": "string"
+                   }
+                   ```
   - **Get collection of a user**
         
         - GET api/collections
@@ -481,4 +518,32 @@
                         "message": "string"
                     }
                     ```                
-  
+  - **Get collection by Id**
+          
+          - GET api/collections/<:collection_id>
+          - Header: Authorization: Bearer TOKEN
+          - Param: <:collectionId> , where collectionId is id of collection.
+          - Request payload: None
+          - Response:
+              + OK:
+                  - Status Code: 200
+                  - Payload:
+                      ```
+                      {
+                          "status": true,
+                          "collection": {
+                            detail of collection
+                          }
+                      }
+                      ```
+        
+              + Bad request (Invalid Message, ...):
+                  - Status Code: 400
+                  - Payload:
+                      ```
+                      {
+                          "status": false,
+                          "code": int,
+                          "message": "string"
+                      }
+                      ```     
