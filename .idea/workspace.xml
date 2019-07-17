@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="" />
+    <list default="true" id="52915eb5-73b1-4eb9-b8da-83f0169b54e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -48,8 +50,8 @@
         <entry file="file://$PROJECT_DIR$/API.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="68">
-                <caret line="460" selection-start-line="460" selection-end-line="491" selection-end-column="22" />
+              <first_editor relative-caret-position="7794">
+                <caret line="497" column="7" selection-start-line="497" selection-start-column="7" selection-end-line="497" selection-end-column="7" />
               </first_editor>
               <second_editor />
             </state>
@@ -60,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/functions/src/controller/image/image.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
-              <caret line="148" column="71" lean-forward="true" selection-start-line="148" selection-start-column="71" selection-end-line="148" selection-end-column="71" />
+              <caret line="148" column="71" selection-start-line="148" selection-start-column="71" selection-end-line="148" selection-end-column="71" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -72,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
-              <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+              <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -340,16 +342,15 @@
       <workItem from="1561804173043" duration="3650000" />
       <workItem from="1561977130452" duration="2921000" />
       <workItem from="1562910226545" duration="10270000" />
-      <workItem from="1563377915789" duration="3985000" />
+      <workItem from="1563377915789" duration="4604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307180000" />
+    <option name="totallyTimeSpent" value="307799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22604097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1236,14 +1237,14 @@
     <entry file="file://$PROJECT_DIR$/functions/src/model/image/image.dao.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/src/controller/image/image.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
-          <caret line="148" column="71" lean-forward="true" selection-start-line="148" selection-start-column="71" selection-end-line="148" selection-end-column="71" />
+          <caret line="148" column="71" selection-start-line="148" selection-start-column="71" selection-end-line="148" selection-end-column="71" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
@@ -1261,7 +1262,7 @@
     <entry file="file://$PROJECT_DIR$/functions/src/controller/collection/collection.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1283,8 +1284,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="460" selection-start-line="460" selection-end-line="491" selection-end-column="22" />
+          <first_editor relative-caret-position="7794">
+            <caret line="497" column="7" selection-start-line="497" selection-start-column="7" selection-end-line="497" selection-end-column="7" />
           </first_editor>
           <second_editor />
         </state>
