@@ -1,12 +1,13 @@
 import {firestoreRef} from "../../config/firebase";
+import HttpException from "../../exception/HttpException";
 
 
 class TagDAO {
     private static tagsRef = firestoreRef.collection("tags");
 
     private static mergeTagsArray = (tagsDB: any[], tagsInput: any[]) => {
-        let combine = [];
-        for(let i in tagsInput){
+        let newTags = [];
+        for (let i in tagsInput) {
             let shared = false;
             for (let j in tagsDB)
                 if (tagsDB[j].id == tagsInput[i].id) {
@@ -14,9 +15,9 @@ class TagDAO {
                     shared = true;
                     break;
                 }
-            if(!shared) combine.push(tagsInput[i])
+            if (!shared) newTags.push(tagsInput[i])
         }
-        combine = combine.concat(tagsDB);
+        const combine = newTags.concat(tagsDB);
         return combine;
     };
 
@@ -30,8 +31,8 @@ class TagDAO {
             return tags;
         } else {
             let tagsResults: any;
-            for (const doc of TagsQuerySnapshot.docs)  {
-                const tagsDB = doc.data().tags ? doc.data().tags: [];
+            for (const doc of TagsQuerySnapshot.docs) {
+                const tagsDB = doc.data().tags ? doc.data().tags : [];
                 const tagsInput = tags.tags;
                 const combine = TagDAO.mergeTagsArray(tagsDB, tagsInput);
 
@@ -59,6 +60,40 @@ class TagDAO {
         });
 
         return allTags;
+    }
+
+
+    static deleteTag = async (tag: any) => {
+        const TagsQuerySnapshot = await TagDAO.tagsRef
+            .where("category", "==", tag.category)
+            .get();
+
+        if(TagsQuerySnapshot.empty) {
+            throw new HttpException(400, "Tag does not exist !");
+        }
+        else {
+            for (const doc of TagsQuerySnapshot.docs) {
+                const tagsDB = doc.data().tags ? doc.data().tags : [];
+                const tagIdDeleted = tag.id;
+
+                // tslint:disable-next-line:no-shadowed-variable
+                let combine = tagsDB.filter((tag: any) => {
+                        return tag.id != tagIdDeleted;
+                    }
+                );
+
+                await doc.ref.set({
+                    tags: combine,
+                }, {
+                    merge: true
+                });
+            }
+
+            return {
+                message: "Deleted tag successfully !",
+            }
+        }
+
     }
 }
 

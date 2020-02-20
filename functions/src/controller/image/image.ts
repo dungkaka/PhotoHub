@@ -5,6 +5,7 @@ import HttpException from "../../exception/HttpException";
 import authMiddleware from "../../middleware/auth.middleware";
 import RequestWithUser from "../../interfaces/requestUser.interface";
 import CollectionDAO from "../../model/collection/collection.dao";
+import uploadPicture from "./imageToStorage";
 
 class ImageQuery implements Controller {
     public path = "";
@@ -18,6 +19,8 @@ class ImageQuery implements Controller {
         // @ts-ignore
         this.router.post(`${this.path}/images`, authMiddleware, this.addImage);
         // @ts-ignore
+        this.router.delete(`${this.path}/images`, authMiddleware, this.deleteImage);
+        // @ts-ignore
         this.router.post(`${this.path}/images/search`, authMiddleware, this.imageQueryByTag);
         // @ts-ignore
         this.router.get(`${this.path}/images`, authMiddleware, this.imageQuery);
@@ -29,6 +32,8 @@ class ImageQuery implements Controller {
         this.router.post(`${this.path}/images/:image_id/like`, authMiddleware, this.likeImage);
         // @ts-ignore
         this.router.delete(`${this.path}/images/:image_id/like`, authMiddleware, this.unLikeImage);
+        // @ts-ignore
+        this.router.put(`${this.path}/images`, authMiddleware, this.updateImage);
         // @ts-ignore
         this.router.get(`${this.path}/images/update_size`, this.updateSizeOfImage);
 
@@ -72,11 +77,45 @@ class ImageQuery implements Controller {
     private addImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
         try {
             const imageDTO = request.body;
-            const image = await ImageDAO.addImage(imageDTO);
+
+            const imageB64 = imageDTO.imageB64.replace("data:image/png;base64,", "");
+            // @ts-ignore
+            const {metadata, url} = await uploadPicture(imageB64, imageDTO.name, imageDTO.name);
+
+            const tags =  imageDTO.tags.reduce((map: any, obj: any) => {
+                map[obj] = true;
+                return map;
+            }, {});
+
+            const imageToDB = {
+                name: imageDTO.name,
+                tags: tags,
+                url: url
+            };
+
+            const image = await ImageDAO.addImage(imageToDB);
+
             response.status(200).send(JSON.stringify({
                 status: true,
                 image: image,
             }, null, `\t`))
+
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    private deleteImage = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+
+        const imageDelete = request.body;
+
+        try {
+            const imageUpdateStatus = await ImageDAO.deleteImage(imageDelete);
+
+            response.send(JSON.stringify({
+                status: true,
+                message: imageUpdateStatus.message,
+            }, null, "\t"));
 
         } catch (error) {
             next(error);
@@ -159,7 +198,22 @@ class ImageQuery implements Controller {
         } catch (error) {
             next(error);
         }
+    }
 
+    private updateImage = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+        const imageUpdate = request.body;
+
+        try {
+            const imageUpdateStatus = await ImageDAO.updateImage(imageUpdate);
+
+            response.send(JSON.stringify({
+                status: true,
+                message: imageUpdateStatus.message,
+            }, null, "\t"));
+
+        } catch (error) {
+            next(error);
+        }
     }
 
 }

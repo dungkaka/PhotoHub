@@ -6,7 +6,7 @@ const spawn = require('child-process-promise').spawn;
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
-import { admin } from "../config/firebase"
+import { admin } from "../config/firebase";
 
 // Max height and width of the thumbnail in pixels.
 const THUMB_MAX_HEIGHT = 200;
@@ -14,10 +14,9 @@ const THUMB_MAX_WIDTH = 200;
 // Thumbnail prefix added to file names.
 const THUMB_PREFIX = 'thumb_';
 
-
-
 // @ts-ignore
 export const generateThumbnail = functions.storage.object().onFinalize(async (object) => {
+
     // File and directory paths.
     console.log(object);
     const filePath = object.name;
@@ -52,19 +51,24 @@ export const generateThumbnail = functions.storage.object().onFinalize(async (ob
     };
 
     // Create the temp directory where the storage file will be downloaded.
-    await mkdirp(tempLocalDir)
+    await mkdirp(tempLocalDir);
+
     // Download file from bucket.
     await file.download({destination: tempLocalFile});
     console.log('The file has been downloaded to', tempLocalFile);
+
     // Generate a thumbnail using ImageMagick.
     await spawn('convert', [tempLocalFile, '-thumbnail', `${THUMB_MAX_WIDTH}x${THUMB_MAX_HEIGHT}>`, tempLocalThumbFile], {capture: ['stdout', 'stderr']});
     console.log('Thumbnail created at', tempLocalThumbFile);
+
     // Uploading the Thumbnail.
     await bucket.upload(tempLocalThumbFile, {destination: thumbFilePath, metadata: metadata});
     console.log('Thumbnail uploaded to Storage at', thumbFilePath);
+
     // Once the image has been uploaded delete the local files to free up disk space.
     fs.unlinkSync(tempLocalFile);
     fs.unlinkSync(tempLocalThumbFile);
+
     // Get the Signed URLs for the thumbnail and original image.
     const config: GetSignedUrlConfig = {
         action: 'read',

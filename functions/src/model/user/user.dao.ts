@@ -35,7 +35,7 @@ class UserDAO {
             gender: user.gender,
             role: user.role,
         }
-    }
+    };
 
     /*
       Take a string as username and query in database.
@@ -54,7 +54,18 @@ class UserDAO {
 
         return listUser;
 
-    }
+    };
+
+    public static getListOfUser = async () => {
+        const userDataQuerySnapshot = await
+            UserDAO.userRef.get();
+        const listUser: any[] = [];
+        userDataQuerySnapshot.forEach((doc) => {
+            listUser.push({...doc.data(), id: doc.id});
+        });
+
+        return listUser;
+    };
 
     /*
     Create user to datasbase. Paramater is userDTO object and password hashed.
@@ -75,9 +86,43 @@ class UserDAO {
         } catch {
             throw new HttpException(400, "Can not register for user with valid information !");
         }
-
-
     }
+
+    public static updateUser = async (user: any) => {
+
+        const userRef = UserDAO.userRef.doc(user.id);
+
+
+        if(userRef) {
+            delete user.id;
+            await userRef.set(user, {
+                merge: true,
+            });
+        } else {
+            throw new HttpException(400, "User doesn't exist !");
+        }
+
+        return {
+            message: "Update user successfully !"
+        }
+
+    };
+
+    public static deleteUser = async (user: any) => {
+        const userRef = UserDAO.userRef.doc(user.id);
+
+        if(userRef) {
+            await userRef.delete();
+        } else {
+            throw new HttpException(400, "User doesn't exist !");
+        }
+
+        return {
+            message: "Delete user successfully !"
+        }
+
+    };
+
 
 }
 

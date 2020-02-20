@@ -15,6 +15,8 @@ import UserModel from "../../model/user/user.model";
 import validateInput from "../../middleware/validate-input.middleware";
 import validationHandler from "../../middleware/validation-handler";
 import InitDefault from "./initDefault";
+import RequestWithUser from "../../interfaces/requestUser.interface";
+import authMiddleware from "../../middleware/auth.middleware";
 
 class AuthenticationController implements Controller {
     public path = '';
@@ -26,17 +28,25 @@ class AuthenticationController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.use(function(req, res, next) {
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            res.header("Access-Control-Allow-Headers","*");
-            res.header('Access-Control-Allow-Credentials', "true");
-            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-            next();
-        });
+        // this.router.use(function(req, res, next) {
+        //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        //     res.header("Access-Control-Allow-Headers","*");
+        //     res.header('Access-Control-Allow-Credentials', "true");
+        //     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+        //     next();
+        // });
 
         // @ts-ignore
         this.router.post(`${this.path}/signup`, validateInput('signUp'), this.registration);
         this.router.post(`${this.path}/login`, this.loggingIn);
+        // @ts-ignore
+        this.router.get(`${this.path}/auth/me`, authMiddleware,this.getUser);
+        // @ts-ignore
+        this.router.get(`${this.path}/users`, authMiddleware, this.getListOfUser);
+        // @ts-ignore
+        this.router.put(`${this.path}/users`, authMiddleware, this.updateUser);
+        // @ts-ignore
+        this.router.delete(`${this.path}/users`, authMiddleware, this.deleteUser);
     }
 
     private registration = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -104,14 +114,82 @@ class AuthenticationController implements Controller {
             }, null, '\t'))
         }
 
-    }
+    };
+
+    private getUser = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+        const user = request.user;
+
+        try {
+            if(user) {
+                const userDTO = UserDAO.convertToUserDTO(user);
+                userDTO.password = undefined;
+                response.status(200).send(JSON.stringify({
+                    user: userDTO,
+                }, null, "\t"));
+            } else {
+                throw new HttpException(400, "Wrong user !");
+            }
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    private getListOfUser = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+
+        try {
+            const listOfUser = await UserDAO.getListOfUser();
+            for(const user of listOfUser) {
+                user.password = undefined;
+            }
+            response.status(200).send(JSON.stringify({
+                users:  listOfUser,
+            }, null, "\t"));
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    private updateUser = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+
+        const userUpdate = request.body;
+
+        try {
+            const userUpdateStatus = await UserDAO.updateUser(userUpdate);
+
+            response.send(JSON.stringify({
+                status: true,
+                message: userUpdateStatus.message,
+            }, null, "\t"));
+
+        } catch (error) {
+            next(error);
+        }
+    };
+
+    private deleteUser = async (request: RequestWithUser, response: express.Response, next: express.NextFunction) => {
+
+        const userDelete = request.body;
+
+        try {
+            const userUpdateStatus = await UserDAO.deleteUser(userDelete);
+
+            response.send(JSON.stringify({
+                status: true,
+                message: userUpdateStatus.message,
+            }, null, "\t"));
+
+        } catch (error) {
+            next(error);
+        }
+    };
+
 
     public createCookie(tokenData: TokenData) {
         return `Authorization=${tokenData.token}; HttpOnly=false; Max-Age=${tokenData.expiresIn}`;
     }
 
     public createToken(user: UserModel): TokenData {
-        const expiresIn = 60*60*24;
+        const expiresIn = 60*60*60*24;
         const secret = keyJWT;
         const dataStoreInToken: DataStoredInToken = {
             username: user.username,

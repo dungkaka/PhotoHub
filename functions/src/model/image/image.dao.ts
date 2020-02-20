@@ -56,10 +56,34 @@ class ImageDAO {
         return listImage;
     }
 
+    public static deleteImage = async (image: any) => {
+        const imgRef = ImageDAO.imagesRef.doc(image.id);
+
+        if(imgRef) {
+            await imgRef.delete();
+        } else {
+            throw new HttpException(400, "Image doesn't exist !");
+        }
+
+        return {
+            message: "Delete image successfully !"
+        }
+
+    };
+
     public static addImage = async (images: any) => {
         const imageRef = await ImageDAO.imagesRef.add(images);
         const image = await imageRef.get();
-        return image.data();
+        if(image) {
+            const tagsArray = [];
+            // @ts-ignore
+            for (const field in image.data().tags) {
+                tagsArray.push(field);
+            }
+            return {...image.data(), id: image.id, tags: tagsArray};
+        } else {
+            throw new HttpException(40, "Can find image");
+        }
     };
 
     public static getAllImage = async () => {
@@ -199,6 +223,22 @@ class ImageDAO {
             }
         } else {
             throw new HttpException(400, "Image can not found");
+        }
+    }
+
+    public static updateImage = async (image: any) => {
+        const imageRef = ImageDAO.imagesRef.doc(image.id);
+
+        if(imageRef) {
+            await imageRef.set(image, {
+                merge: true,
+            })
+        } else {
+            throw new HttpException(400, "Image doesn't exist !");
+        }
+
+        return {
+            message: "Update image successfully !"
         }
     }
 
